@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ceres-solver/ceres-solver.svg?branch=master)](https://travis-ci.org/ceres-solver/ceres-solver)
 
-Ceres Solver
+Ceres Solver 2.0.0 for ubuntu22.04
 ============
 
 Ceres Solver is an open source C++ library for modeling and solving
