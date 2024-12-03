@@ -1,0 +1,1898 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Version History &mdash; Ceres Solver</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": {"availableFonts": ["TeX"], "scale": 90}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Contributing" href="contributing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ceres Solver
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="features.html">Why?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivatives.html">On Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nnls_modeling.html">Modeling Non-linear Least Squares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nnls_solving.html">Solving Non-linear Least Squares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nnls_covariance.html">Covariance Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient_solver.html">General Unconstrained Minimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQS, Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.0.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backward-incompatible-api-changes">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug-fixes-minor-changes">Bug Fixes &amp; Minor Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.14.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Bug Fixes &amp; Minor Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1.13.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Bug Fixes &amp; Minor Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">1.12.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Bug Fixes &amp; Minor Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">1.11.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Bug Fixes &amp; Minor Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">1.10.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">1.9.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id24">1.8.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id25">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id27">1.7.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id31">1.6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id32">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id34">1.5.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id35">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id38">1.4.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id39">Backward Incompatible API Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id42">1.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id43">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id45">1.2.3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id46">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id47">1.2.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id48">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id49">1.2.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id50">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id52">1.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id53">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id55">1.1.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id56">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id57">1.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id58">New Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">Bug Fixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id60">1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#origins">Origins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ceres Solver</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Version History</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="version-history">
+<span id="chapter-version-history"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>2.0.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-features">
+<h3>New Features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Ceres Solver now requires a C++14 compatible compiler, Eigen
+version &gt;= 3.3 &amp; CMake version &gt;= 3.5, XCode version &gt;= 11.2 (Sameer
+Agarwal, Alex Stewart &amp; Keir Mierle)</p></li>
+<li><p>C++ threading based multi-threading support. (Mike Vitus)</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">Problem::AddResidualBlock()</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">SizedFunction</span></code>,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code>
+support an arbitrary number of parameter blocks using variadic
+templates (Johannes Beck)</p></li>
+<li><p>On Apple platforms, support for Apple’s Accelerate framework as a
+sparse linear algebra library. (Alex Stewart)</p></li>
+<li><p>Significantly faster AutoDiff (Darius Rueckert)</p></li>
+<li><p>Mixed precision solves when using
+<code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code>. (Sameer Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LocalParameterization</span></code> objects can have a zero sized tangent
+size, which effectively makes the parameter block constant. In
+particular, this allows for a <code class="docutils literal notranslate"><span class="pre">SubsetParameterization</span></code> that holds
+all the coordinates of a parameter block constant. (Sameer Agarwal
+&amp; Emil Ernerfeldt)</p></li>
+<li><p>Visibility based preconditioning now works with <code class="docutils literal notranslate"><span class="pre">Eigen</span></code> and
+<code class="docutils literal notranslate"><span class="pre">CXSparse</span></code>. (Sameer Agarwal)</p></li>
+<li><p>Added <code class="xref py py-func docutils literal notranslate"><span class="pre">Problem::EvaluateResidualBlock()</span></code> and
+<code class="xref py py-func docutils literal notranslate"><span class="pre">Problem::EvaluateResidualBlockAssumingParametersUnchanged()</span></code>. (Sameer
+Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GradientChecker</span></code> now uses <code class="docutils literal notranslate"><span class="pre">RIDDERS</span></code> method for more accurate
+numerical derivatives. (Sameer Agarwal)</p></li>
+<li><p>Covariance computation uses a faster SVD algorithm (Johannes Beck)</p></li>
+<li><p>A new local parameterization for lines (Johannes Beck)</p></li>
+<li><p>A new (<code class="docutils literal notranslate"><span class="pre">SUBSET</span></code>) preconditioner for problems with general
+sparsity. (Sameer Agarwal)</p></li>
+<li><p>Faster Schur elimination using faster custom BLAS routines for
+small matrices. (yangfan)</p></li>
+<li><p>Automatic differentiation for <code class="docutils literal notranslate"><span class="pre">FirstOrderFunction</span></code> in the form of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">AutoDiffFirstOrderFunction</span></code>. (Sameer Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TinySolverAutoDiffFunction</span></code> now supports dynamic number of residuals
+just like <code class="docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>. (Johannes Graeter)</p></li>
+</ol>
+</div>
+<div class="section" id="backward-incompatible-api-changes">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#backward-incompatible-api-changes" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EvaluationCallback</span></code> has been moved from <code class="docutils literal notranslate"><span class="pre">Solver::Options</span></code> to
+<code class="docutils literal notranslate"><span class="pre">Problem::Options</span></code> for a more correct API.</p></li>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">Android.mk</span></code> based build.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::num_linear_solver_threads</span></code> is no more.</p></li>
+</ol>
+</div>
+<div class="section" id="bug-fixes-minor-changes">
+<h3>Bug Fixes &amp; Minor Changes<a class="headerlink" href="#bug-fixes-minor-changes" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Use CMAKE_PREFIX_PATH to pass Homebrew install location (Alex Stewart)</p></li>
+<li><p>Add automatic differentiation support for <code class="docutils literal notranslate"><span class="pre">Erf</span></code> and <code class="docutils literal notranslate"><span class="pre">Erfc</span></code>. (Morten Hennemose)</p></li>
+<li><p>Add a move constructor to <code class="docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>, <code class="docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code>, <code class="docutils literal notranslate"><span class="pre">DynamicAutoDiffCostFunction</span></code> and <code class="docutils literal notranslate"><span class="pre">DynamicNumericDiffCostFunction</span></code>. (Julian Kent &amp; Sameer Agarwal)</p></li>
+<li><p>Fix potential for mismatched release/debug TBB libraries (Alex Stewart)</p></li>
+<li><p>Trust region minimizer now reports the gradient of the current state, rather than zero when it encounters an unsuccessful step (Sameer Agarwal &amp; Alex Stewart)</p></li>
+<li><p>Unify symbol visibility configuration for all compilers (Taylor Braun-Jones)</p></li>
+<li><p>Fix the Bazel build so that it points GitLab instead of the old BitBucket repo for Eigen (Sameer Agarwal)</p></li>
+<li><p>Reformat source to be clang-format clean and add a script to format the repo using clang-format. (Nikolaus Demmel)</p></li>
+<li><p>Various documentation improvements (Sameer Agarwal, Carl Dehlin,
+Bayes Nie, Chris Choi, Frank, Kuang Fangjun, Dmitriy Korchemkin,
+huangqinjin, Patrik Huber, Nikolaus Demmel, Lorenzo Lamia)</p></li>
+<li><p>Huge number of build system simplification &amp; cleanups (Alex
+Stewart, NeroBurner, Alastair Harrison, Linus Mårtensson, Nikolaus Demmel)</p></li>
+<li><p>Intel TBB based threading removed (Mike Vitus)</p></li>
+<li><p>Allow <code class="xref py py-class docutils literal notranslate"><span class="pre">SubsetParameterization</span></code> to accept an empty vector of
+constant parameters. (Sameer Agarwal &amp; Frédéric Devernay)</p></li>
+<li><p>Fix a bug in DynamicAutoDiffCostFunction when all parameters are
+constant (Ky Waegel &amp; Sameer Agarwal)</p></li>
+<li><p>Fixed incorrect argument name in <code class="docutils literal notranslate"><span class="pre">RotationMatrixToQuaternion</span></code>
+(Alex Stewart &amp; Frank Dellaert)</p></li>
+<li><p>Do not export class template LineParameterization (huangqinjin)</p></li>
+<li><p>Change the type of parameter index/offset to match their getter/setter (huangqinjin)</p></li>
+<li><p>Initialize integer variables with integer instead of double (huangqinjin)</p></li>
+<li><p>Add std::numeric_limit specialization for Jets (Sameer Agarwal)</p></li>
+<li><p>Fix a MSVC type deduction bug in ComputeHouseholderVector (Sameer Agarwal)</p></li>
+<li><p>Allow LocalParameterizations to have zero local size. (Sameer Agarwal)</p></li>
+<li><p>Add photometric and relative-pose residuals to autodiff benchmarks (Nikolaus Demmel)</p></li>
+<li><p>Add a constant cost function to the autodiff benchmarks (Darius Rueckert)</p></li>
+<li><p>Add const to GetCovarianceMatrix#. (Johannes Beck)</p></li>
+<li><p>Fix Tukey loss function (Enrique Fernandez)</p></li>
+<li><p>Fix 3+ nested Jet constructor (Julian Kent)</p></li>
+<li><p>Fix windows MSVC build. (Johannes Beck)</p></li>
+<li><p>Fix invert PSD matrix. (Johannes Beck)</p></li>
+<li><p>Remove not used using declaration (Johannes Beck)</p></li>
+<li><p>Let Problem::SetParameterization be called more than once. (Sameer Agarwal)</p></li>
+<li><p>Make Problem movable. (Sameer Agarwal)</p></li>
+<li><p>Make EventLogger more efficient. (Sameer Agarwal)</p></li>
+<li><p>Remove a CHECK failure from covariance_impl.cc (Sameer Agarwal)</p></li>
+<li><p>Add a missing cast in rotation.h (Sameer Agarwal)</p></li>
+<li><p>Add a specialized SchurEliminator and integrate it for the case &lt;2,3,6&gt; (Sameer Agarwal)</p></li>
+<li><p>Remove use of SetUsage as it creates compilation problems. (Sameer Agarwal)</p></li>
+<li><p>Protect declarations of lapack functions under CERES_NO_LAPACK (Sameer Agarwal)</p></li>
+<li><p>Drop ROS dependency on catkin (Scott K Logan)</p></li>
+<li><p>Explicitly delete the copy constructor and copy assignment operator (huangqinjin)</p></li>
+<li><p>Use selfAdjoingView&lt;Upper&gt; in InvertPSDMatrix. (Sameer Agarwal)</p></li>
+<li><p>Speed up InvertPSDMatrix (Sameer Agarwal)</p></li>
+<li><p>Allow Solver::Options::max_num_line_search_step_size_iterations = 0. (Sameer Agarwal)</p></li>
+<li><p>Make LineSearchMinizer work correctly with negative valued functions. (Sameer Agarwal)</p></li>
+<li><p>Fix missing declaration warnings in Ceres code (Sergey Sharybin)</p></li>
+<li><p>Modernize ProductParameterization. (Johannes Beck)</p></li>
+<li><p>Add some missing string-to-enum-to-string convertors. (Sameer Agarwal)</p></li>
+<li><p>Add checks in rotation.h for inplace operations. (Johannes Beck)</p></li>
+<li><p>Update Bazel WORKSPACE for newest Bazel (Keir Mierle)</p></li>
+<li><p>TripletSparseMatrix: guard against self-assignment (ngoclinhng)</p></li>
+<li><p>Fix Eigen alignment issues. (Johannes Beck)</p></li>
+<li><p>Add the missing &lt;array&gt; header to fixed_array.h (Sameer Agarwal)</p></li>
+<li><p>Switch to FixedArray implementation from abseil. (Johannes Beck)</p></li>
+<li><p>IdentityTransformation -&gt; IdentityParameterization (Sameer Agarwal)</p></li>
+<li><p>Reorder initializer list to make -Wreorder happy (Sam Hasinoff)</p></li>
+<li><p>Reduce machoness of macro definition in cost_functor_to_function_test.cc (Sameer Agarwal)</p></li>
+<li><p>Enable optional use of sanitizers (Alex Stewart)</p></li>
+<li><p>Fix a typo in cubic_interpolation.h (Sameer Agarwal)</p></li>
+<li><p>Update googletest/googlemock to db9b85e2. (Sameer Agarwal)</p></li>
+<li><p>Fix Jacobian evaluation for constant parameter (Johannes Beck)</p></li>
+<li><p>AutoDiffCostFunction: use static_assert to check if the correct overload of the constructor is used. (Christopher Wecht)</p></li>
+<li><p>Avoid additional memory allocation in gradient checker (Justin Carpentier)</p></li>
+<li><p>Swap the order of definition of IsValidParameterDimensionSequence. (Sameer Agarwal)</p></li>
+<li><p>Add ParameterBlock::IsSetConstantByUser() (Sameer Agarwal)</p></li>
+<li><p>Add parameter dims for variadic sized cost function (Johannes Beck)</p></li>
+<li><p>Remove trailing zero parameter block sizes (Johannes Beck)</p></li>
+<li><p>Adding integer sequence and algorithms (Johannes Beck)</p></li>
+<li><p>Improve readability of LocalParameterization code. (Sameer Agarwal)</p></li>
+<li><p>Simplifying Init in manual contructor (Johannes Beck)</p></li>
+<li><p>Fix typo in NIST url. (Alessandro Gentilini)</p></li>
+<li><p>Add a .clang-format file. (Sameer Agarwal)</p></li>
+<li><p>Make ConditionedCostFunction compatible with repeated CostFunction. (Sameer Agarwal)</p></li>
+<li><p>Remove conversions from a double to a Jet. (Kuang Fangjun)</p></li>
+<li><p>close the file on return. (Kuang Fangjun)</p></li>
+<li><p>Fix an error in the demo code for ceres::Jet. (Kuang Fangjun)</p></li>
+<li><p>Recheck the residual after a new call. (Kuang Fangjun)</p></li>
+<li><p>avoid recomputation. (Kuang Fangjun)</p></li>
+<li><p>Fix calculation of Solver::Summary::num_threads_used. (Alex Stewart)</p></li>
+<li><p>Convert calls to CHECK_NOTNULL to CHECK. (Sameer Agarwal)</p></li>
+<li><p>Add a missing &lt;cstdint&gt; to block_structure.h (Sameer Agarwal)</p></li>
+<li><p>Fix an uninitialized memory error in EvaluationCallbackTest (Sameer Agarwal)</p></li>
+<li><p>Respect bounds when using Solver::Options::check_gradients (Sameer Agarwal)</p></li>
+<li><p>Relax the limitation that SchurEliminator::Eliminate requires a rhs. (Sameer Agarwal)</p></li>
+<li><p>Fix three out of bounds errors in CompressedRowSparseMatrix. (Sameer Agarwal)</p></li>
+<li><p>Add Travis CI support. (Alex Stewart)</p></li>
+<li><p>Refactor Ceres threading option configuration. (Alex Stewart)</p></li>
+<li><p>Handle NULL permutation from SuiteSparseQR (Pau Gargallo)</p></li>
+<li><p>Remove chunk shuffle in multithreaded SchurEliminator (Norbert Wenzel)</p></li>
+<li><p>Add /bigobj to nist on MSVC. (Alex Stewart)</p></li>
+<li><p>Fix ‘xxx.cc has no symbols’ warnings. (Alex Stewart)</p></li>
+<li><p>Add a typedef to expose the scalar type used in a Jet. (Sameer Agarwal)</p></li>
+<li><p>Fix a use after free bug in the tests. (Sameer Agarwal)</p></li>
+<li><p>Simplify integration tests. (Sameer Agarwal)</p></li>
+<li><p>Converts std::unique_lock to std::lock_guard. (Mike Vitus)</p></li>
+<li><p>Bring the Bazel build in sync with the CMake build. (Sameer Agarwal)</p></li>
+<li><p>Adds a ParallelFor wrapper for no threads and OpenMP. (Mike Vitus)</p></li>
+<li><p>Improve the test coverage in small_blas_test (Sameer Agarwal)</p></li>
+<li><p>Handle possible overflow in TrustRegionStepEvaluator. (Sameer Agarwal)</p></li>
+<li><p>Fix lower-bound on result of minimising step-size polynomial. (Alex Stewart)</p></li>
+<li><p>Adds missing functional include in thread_pool.h (Mike Vitus)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>1.14.0<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>New Features<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>New <code class="docutils literal notranslate"><span class="pre">EvaluationCallback</span></code> API. (Keir Mierle)</p></li>
+<li><p>TBB based threading (Yury Prokazov &amp; Mike Vitus)</p></li>
+<li><p>C++11 threads based threading (Mike Vitus)</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">ceres::Context</span></code> object to cache and keep track of global
+state. (Mike Vitus)</p></li>
+<li><p>TinySolver - A small dense solver meant for solving small problems
+really fast. [EXPERIMENTAL] (Keir Mierle &amp; Sameer Agarwal)</p></li>
+<li><p>Bazel Build. (Keir Mierle &amp; Rodrigo Queiro)</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::num_linear_solver_threads</span></code> is deprecated,
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::num_threads</span></code> controls all parallelism in Ceres
+Solver now. Similarly,
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary::num_linear_solver_threads_given</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary::num_linear_solver_threads_used</span></code> are also
+deprecated.</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3>Bug Fixes &amp; Minor Changes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Remove armv7 from target architectures when building for iOS &gt;= 11. (Alex Stewart)</p></li>
+<li><p>Corrects the documentation of Problem::AddResidualBlock. (Mike Vitus)</p></li>
+<li><p>Fixes the configuration check in port.h. (Mike Vitus)</p></li>
+<li><p>Add small_blas_gemm_benchmark. (Sameer Agarwal)</p></li>
+<li><p>Implement some C++11 math functions for Jet (Emil Ernerfeldt)</p></li>
+<li><p>Fix integer conversion warning in MSVC. (Alex Stewart)</p></li>
+<li><p>Improve NDK build error handling (Keir Mierle)</p></li>
+<li><p>Fix build: -Wreorder, test fail (Keir Mierle)</p></li>
+<li><p>An implementation of SubsetPreconditioner. (Sameer Agarwal)</p></li>
+<li><p>Split bundle adjustment tests into individual binaries (Keir Mierle)</p></li>
+<li><p>Require Eigen &gt;= 3.3.4 on aarch64. (Alex Stewart)</p></li>
+<li><p>Fix TBB detection on Windows. (Alex Stewart)</p></li>
+<li><p>Improve ExecutionSummary (Sameer Agarwal)</p></li>
+<li><p>Remove as typo from callbacks.h (Sameer Agarwal)</p></li>
+<li><p>Removes two unimplemented class functions. (Mike Vitus)</p></li>
+<li><p>Update EigenTypes to deal with 1 column matrices (Sameer Agarwal)</p></li>
+<li><p>Add GradientProblemSolver::Options::update_state_every_iteration (Sameer Agarwal)</p></li>
+<li><p>Fixes the pose graph example documentation. (Mike Vitus)</p></li>
+<li><p>Fix Eigen &gt;= 3.3 compilation if EIGEN_DONT_VECTORIZE set (Janick Martinez Esturo)</p></li>
+<li><p>Add an optional dependency on the Google Benchmark library. (Sameer Agarwal)</p></li>
+<li><p>Fix the documentation for CostFunction::Evaluate. (Sameer Agarwal)</p></li>
+<li><p>Fix a mathematical typo. (Sameer Agarwal)</p></li>
+<li><p>Add TBB information to Ceres version string. (Alex Stewart)</p></li>
+<li><p>Move discussion of dependency licensing to Sphinx docs. (Alex Stewart)</p></li>
+<li><p>Fix an erroneous namespace comment (Sameer Agarwal)</p></li>
+<li><p>Fix use of unnamed type as template argument warnings on Clang. (Alex Stewart)</p></li>
+<li><p>Add link for CLA in docs; minor fixes (Keir Mierle)</p></li>
+<li><p>Fix tiny_solver_test (Sameer Agarwal)</p></li>
+<li><p>Improve compatibility with ceres::Solver (Sameer Agarwal)</p></li>
+<li><p>Refactor nist.cc to be compatible with TinySolver (Sameer Agarwal)</p></li>
+<li><p>Report timings with microsecond resolution (Thomas Gamper)</p></li>
+<li><p>Add missing Eigen traits to Jets (Sameer Agarwal)</p></li>
+<li><p>Use high-resolution timer on Windows (Thomas Gamper)</p></li>
+<li><p>Add a comment about default constructed reference counts= (Keir Mierle)</p></li>
+<li><p>Delete cost and loss functions when not in use. (Sameer Agarwal)</p></li>
+<li><p>Fix assert_ndk_version for &gt;= r11. (Alex Stewart)</p></li>
+<li><p>Add docs explaining how to build Ceres with OpenMP on OS X. (Alex Stewart)</p></li>
+<li><p>Update LAPACK option to refer to direct use by Ceres only. (Alex Stewart)</p></li>
+<li><p>Hide optional SuiteSparse vars in CMake GUI by default. (Alex Stewart)</p></li>
+<li><p>Always hide TBB_LIBRARY in CMake GUI by default. (Alex Stewart)</p></li>
+<li><p>Fix typo in definition of f3 in powell example (x4 -&gt; x3). (Alex Stewart)</p></li>
+<li><p>Fix suppression of C++11 propagation warning. (Alex Stewart)</p></li>
+<li><p>Add new Schur specialization for 2, 4, 6. (Chris Sweeney)</p></li>
+<li><p>Use const keyword for ‘int thread_id’ variables. (pmoulon)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>1.13.0<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>New Features<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LineSearchMinimizer</span></code> and <code class="docutils literal notranslate"><span class="pre">GradientProblemSolver</span></code> are up to 2x
+faster due to fewer function evaluations. (Sameer Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> is significantly faster because Ceres
+now computes the normal equations exploiting the static block
+sparsity structure. (Cheng Wang &amp; Sameer Agarwal)</p></li>
+<li><p>Add compound with scalar operators for Jets. (Alex Stewart)</p></li>
+<li><p>Enable support for AVX instructions for Jets. (Alex Stewart)</p></li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>The enum <code class="docutils literal notranslate"><span class="pre">CovarianceAlgorithmType</span></code> which controls the linear algebra
+algorithm used to compute the covariance used to combine the choice of
+the algorithm and the choice of the sparse linear algebra library into
+the enum name. So we had <code class="docutils literal notranslate"><span class="pre">SUITE_SPARSE_QR</span></code> and
+<code class="docutils literal notranslate"><span class="pre">EIGEN_SPARSE_QR</span></code>. <code class="docutils literal notranslate"><span class="pre">Covariance::Options</span></code> now has a separate member
+allowing the user to choose the sparse linear algebra library, just
+like the solver and <code class="docutils literal notranslate"><span class="pre">CovarianceAlgorithmType</span></code> now takes values
+<code class="docutils literal notranslate"><span class="pre">DENSE_SVD</span></code> and <code class="docutils literal notranslate"><span class="pre">SPARSE_QR</span></code>. This is a forward looking change that
+will allow us to develop more flexible covariance estimation
+algorithms with multiple linear algebra backends.</p>
+</div>
+<div class="section" id="id9">
+<h3>Bug Fixes &amp; Minor Changes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">InvertPSDMatrix</span></code> as it was triggering an Eigen assert in
+Debug mode. (Philipp Hubner)</p></li>
+<li><p>Fix cmake error from CeresConfig.cmake when Ceres not found (Taylor
+Braun-Jones)</p></li>
+<li><p>Completely refactored <code class="docutils literal notranslate"><span class="pre">SparseNormalCholeskySolver</span></code>. (Sameer
+Agarwal)</p></li>
+<li><p>Fixed time reporting in <code class="docutils literal notranslate"><span class="pre">Summary::FullReport</span></code> when
+<code class="docutils literal notranslate"><span class="pre">LineSearchMinimizer</span></code> is used. (Sameer Agarwal)</p></li>
+<li><p>Remove unused file: collections_port.cc. (Sameer Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPARSE_SCHUR</span></code> + <code class="docutils literal notranslate"><span class="pre">CX_SPARSE</span></code> = Faster (Sameer Agarwal)</p></li>
+<li><p>Refactored a number of linear solver tests to be more thorough and
+informative. (Sameer Agarwal)</p></li>
+<li><p>Pass user-specified search hints as HINTS not PATHS. (Alex Stewart)</p></li>
+<li><p>Prefer Eigen installs over exported build directories. (Alex
+Stewart)</p></li>
+<li><p>Add OpenMP flags when compiling for C if enabled. (Alex Stewart)</p></li>
+<li><p>Add a missing <code class="docutils literal notranslate"><span class="pre">CERES_EXPORT</span></code> to GradientChecker (Sameer Agarwal)</p></li>
+<li><p>Use target_compile_features() to specify C++11 requirement if
+available. (Alex Stewart)</p></li>
+<li><p>Update docs: .netrc –&gt; .gitcookies (Keir Mierle)</p></li>
+<li><p>Fix implicit precision loss warning on 64-bit archs (Ricardo
+Sanchez-Saez)</p></li>
+<li><p>Optionally use exported Eigen CMake configuration if
+available. (Alex Stewart)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Ceres_[SOURCE/BINARY]_DIR</span></code> not <code class="docutils literal notranslate"><span class="pre">CMAKE_XXX_DIR</span></code> to support
+nesting. (Alex Stewart)</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">Problem::EvaluateOptions</span></code> documentation. (Sameer Agarwal)</p></li>
+<li><p>Add public headers to CMake target for IDEs. (Devin Lane)</p></li>
+<li><p>Add an article on interfacing with automatic
+differentiation. (Sameer Agarwal)</p></li>
+<li><p>Add default Fedora/Debian locations for CXSparse to search
+paths. (Alex Stewart)</p></li>
+<li><p>Add a test for <code class="docutils literal notranslate"><span class="pre">LineSearchMinimizer</span></code> (Sameer Agarwal)</p></li>
+<li><p>Flatten the table of contents. (Sameer Agarwal)</p></li>
+<li><p>Fix when <code class="docutils literal notranslate"><span class="pre">LineSearchMinimizer</span></code> adds the <code class="docutils literal notranslate"><span class="pre">IterationSummary`</span></code> to
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary</span></code> (Sameer Agarwal)</p></li>
+<li><p>Fix search path for miniglog headers when Ceres is exported. (Alex
+Stewart)</p></li>
+<li><p>Fix ambiguous reference to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> when using miniglog. (Alex
+Stewart)</p></li>
+<li><p>Fix Jet/Eigen compatibility for Eigen &gt; 3.3 (Julien Pilet)</p></li>
+<li><p>Add max severity option when <code class="docutils literal notranslate"><span class="pre">MINIGLOG</span></code> is enabled (Taylor
+Braun-Jones)</p></li>
+<li><p>Improvements to Schur template specializations (Sameer Agarwal)</p></li>
+<li><p>Added an article on derivatives (Sameer Agarwal)</p></li>
+<li><p>Require Eigen &gt;= 3.3 to define ScalarBinaryOpTraits in Jet. (Alex
+Stewart)</p></li>
+<li><p>A hacky fix for the Eigen::FullPivLU changes. (Sameer Agarwal)</p></li>
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">ScalarBinaryOpTraits</span></code> for Jet types. (Chris Sweeney)</p></li>
+<li><p>Remove spurious conversion from doubles to Jets. (Sameer Agarwal)</p></li>
+<li><p>Fix an error in the tutorial code for <code class="docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code>
+(Sameer Agarwal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CERES_EXPORT</span></code> fix to compile Ceres as DLL (Je Hyeong Hong)</p></li>
+<li><p>Fix detection of deprecated Bessel function names on MSVC. (Alex
+Stewart)</p></li>
+<li><p>Ensure that partial evaluation of residuals triggers an error
+(Sameer Agarwal)</p></li>
+<li><p>Fix detection of CMake-built glog on Windows. (Alex Stewart)</p></li>
+<li><p>Add additional search paths for glog &amp; Eigen on Windows. (Alex
+Stewart)</p></li>
+<li><p>Various minor grammar and bug fixes to the documentation (Sameer
+Agarwal, Alex Stewart, William Rucklidge)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>1.12.0<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>New Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Aligned <code class="docutils literal notranslate"><span class="pre">Jet</span></code> matrices for improved automatic differentiation
+performance. (Andrew Hunter)</p></li>
+<li><p>Auto-differentiable implementations of Bessel functions, <code class="docutils literal notranslate"><span class="pre">floor</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">ceil</span></code> (Alessandro Gentilini &amp; Michael Vitus)</p></li>
+<li><p>New 2D and 3D SLAM examples. (Michael Vitus)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">EigenQuaternionParameterization</span></code>. (Michael Vitus)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Problem::IsParameterBlockConstant</span></code> (Thomas Schneider)</p></li>
+<li><p>A complete refactoring of <code class="docutils literal notranslate"><span class="pre">TrustRegionMinimizer</span></code>. (Sameer Agarwal)</p></li>
+<li><p>Gradient checking cleanup and local parameterization bugfix (David
+Gossow)</p></li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::numeric_derivative_relative_step_size</span></code> has been
+renamed to
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::gradient_check_numeric_derivative_relative_step_size</span></code>. (Sameer
+Agarwal)</p></li>
+</ol>
+</div>
+<div class="section" id="id13">
+<h3>Bug Fixes &amp; Minor Changes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Clear XXX_FOUND in Find&lt;XXX&gt;.cmake prior to searching. (Alex
+Stewart)</p></li>
+<li><p>Fix versioning in the documentation (Sameer Agarwal)</p></li>
+<li><p>Fix missing gflags imported target definition in
+CeresConfig.cmake. (Alex Stewart)</p></li>
+<li><p>Make gflags a public dependency of Ceres if it and glog are
+found. (Alex Stewart)</p></li>
+<li><p>Add support for glog exported CMake target. (Alex Stewart)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">google::GLOG_WARNING</span></code> instead of <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> in tests to
+support MSVC. (Alex Stewart)</p></li>
+<li><p>Update gtest and gmock to
+<code class="docutils literal notranslate"><span class="pre">a2b8a8e07628e5fd60644b6dd99c1b5e7d7f1f47</span></code> (Sameer Agarwal)</p></li>
+<li><p>Add MSVC-specific <code class="docutils literal notranslate"><span class="pre">#define</span></code> to expose math constants in
+<code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code>. (Alex Stewart)</p></li>
+<li><p>Fix typo. indepdendent -&gt; independent (Hung Lun)</p></li>
+<li><p>Fix potential invalid reset of CMAKE_FIND_LIBRARY_PREFIXES on MSVC
+(Alex Stewart)</p></li>
+<li><p>Fix use of alignas(0) which is not ignored on GCC (Alex Stewart)</p></li>
+<li><p>Use default alignment if alignof(std::max_align_t) &lt; 16 with C++11
+(Alex Stewart)</p></li>
+<li><p>Introduce a common base class for DynamicAutoDiffCostFunction and
+DynamicNumericDiffCostFunction. (Sameer Agarwal)</p></li>
+<li><p>Fix an exact equality test causing breakage in
+gradient_checker_test. (Sameer Agarwal)</p></li>
+<li><p>Add GradientProblemSolver::Options::parameter_tolerance. (Sameer
+Agarwal)</p></li>
+<li><p>Add missing T() wrappers for constants. (Rob Carroll)</p></li>
+<li><p>Remove two checks from rotation.h (Sameer Agarwal)</p></li>
+<li><p>Relax the tolerance in QuaternionParameterizationTestHelper. (Je
+Hyeong Hong)</p></li>
+<li><p>Occured -&gt; Occurred. (Sameer Agarwal)</p></li>
+<li><p>Fix a test error in autodiff_test.cc. (Je Hyeong Hong)</p></li>
+<li><p>Fix documentation source for templated function in <code class="docutils literal notranslate"><span class="pre">rotation.h</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> to enable Catkin builds. (Damon Kohler)</p></li>
+<li><p>Relaxing Jacobian matching in Gradient Checker test. (David Gossow)</p></li>
+<li><p>Allow SubsetParameterization to hold all parameters constant
+(Sameer Agarwal)</p></li>
+<li><p>Fix an Intel compiler error in covariance_impl.cc (Je Hyeong Hong)</p></li>
+<li><p>Removing duplicate include directive. (David Gossow)</p></li>
+<li><p>Remove two DCHECKs from CubicHermiteSpline. (Sameer Agarwal)</p></li>
+<li><p>Fix some compiler warnings. (Richard Trieu)</p></li>
+<li><p>Update ExpectArraysClose to use ExpectClose instead of
+EXPECT_NEAR. (Phillip Hubner)</p></li>
+<li><p>FindWithDefault returns by value rather than reference. (&#64;aradval)</p></li>
+<li><p>Fix compiler errors on some systems. (David Gossow)</p></li>
+<li><p>Note that Problem::Evaluate cannot be called from an
+IterationCallback. (Sameer Agarwal)</p></li>
+<li><p>Use ProductParameterization in bundle_adjuster.cc (Sameer Agarwal)</p></li>
+<li><p>Enable support for OpenMP in Clang if detected. (Alex Stewart)</p></li>
+<li><p>Remove duplicate entry for the NIST example in the docs. (Michael
+Vitus)</p></li>
+<li><p>Add additional logging for analyzing orderings (Sameer Agarwal)</p></li>
+<li><p>Add readme for the sampled_function example. (Michael Vitus)</p></li>
+<li><p>Use _j[0,1,n]() Bessel functions on MSVC to avoid deprecation
+errors. (Alex Stewart &amp; Kichang Kim)</p></li>
+<li><p>Fix: Copy minimizer option <code class="docutils literal notranslate"><span class="pre">is_silent</span></code> to
+<code class="docutils literal notranslate"><span class="pre">LineSearchDirection::Options</span></code> (Nicolai Wojke)</p></li>
+<li><p>Fix typos in <code class="docutils literal notranslate"><span class="pre">users.rst</span></code> (Sameer Agarwal)</p></li>
+<li><p>Make some Jet comparisons exact. (Sameer Agarwal)</p></li>
+<li><p>Add colmap to users.rst (Sameer Agarwal)</p></li>
+<li><p>Fix step norm evaluation in LineSearchMinimizer (Sameer Agarwal)</p></li>
+<li><p>Remove use of -Werror when compiling Ceres. (Alex Stewart)</p></li>
+<li><p>Report Ceres compile options as components in find_package(). (Alex
+Stewart)</p></li>
+<li><p>Fix a spelling error in nnls_modeling.rst (Timer)</p></li>
+<li><p>Only use collapse() directive with OpenMP 3.0 or higher. (Keir
+Mierle)</p></li>
+<li><p>Fix install path for CeresConfig.cmake to be architecture-aware.</p></li>
+<li><p>Fix double conversion to degrees in rotation_test (Keir Mierle)</p></li>
+<li><p>Make Jet string output more readable (Keir Mierle)</p></li>
+<li><p>Fix rotation_test IsClose() and related tests (Keir Mierle)</p></li>
+<li><p>Loosen an exact equality in local_parameterization_test (Sameer
+Agarwal)</p></li>
+<li><p>make_docs: Pass the file encoding to open() (Niels Ole Salscheider)</p></li>
+<li><p>Fix error message returned when using SUITE_SPARSE_QR in covariance
+estimation on a ceres built without SuiteSparse support. (Simon
+Rutishauser)</p></li>
+<li><p>Fix CXX11 option to be available on MinGW &amp; CygWin, but not
+MSVC. (Alex Stewart)</p></li>
+<li><p>Fix missing early return() in xxx_not_found() dependency
+macros. (Alex Stewart)</p></li>
+<li><p>Initialize <code class="docutils literal notranslate"><span class="pre">inner_iterations_were_useful_</span></code> correctly. (Sameer
+Agarwal)</p></li>
+<li><p>Add an implementation for GradientProblemSolver::Options::IsValid
+(Sameer Agarwal)</p></li>
+<li><p>Fix use of va_copy() if compiling with explicit C++ version &lt;
+C++11. (Alex Stewart)</p></li>
+<li><p>Install CMake files to lib/cmake/Ceres (Niels Ole Salscheider)</p></li>
+<li><p>Allow users to override the documentation install directory. (Niels
+Ole Salscheider)</p></li>
+<li><p>Add covariance matrix for a vector of parameters (Wannes Van Loock)</p></li>
+<li><p>Saner tolerances &amp; stricter LRE test. (Sameer Agarwal)</p></li>
+<li><p>Fix a malformed sentence in the tutorial. (Sameer Agarwal)</p></li>
+<li><p>Add logging for sparse Cholesky factorization using Eigen. (Sameer
+Agarwal)</p></li>
+<li><p>Use std::adjacent_find instead of std::unique. (Sameer Agarwal)</p></li>
+<li><p>Improve logging in CompressedRowJacobianWriter on crash. (Sameer
+Agarwal)</p></li>
+<li><p>Fix free parameter block handling in covariance computation (Wannes
+Van Loock)</p></li>
+<li><p>Report the number of line search steps in FullReport. (Sameer
+Agarwal)</p></li>
+<li><p>Make CMake read Ceres version directly from
+include/ceres/version.h. (Alex Stewart)</p></li>
+<li><p>Lots of code style/lint changes. (William Rucklidge)</p></li>
+<li><p>Fix covariance computation for constant blocks (Wannes Van Loock)</p></li>
+<li><p>Add IOS_DEPLOYMENT_TARGET variable to iOS.cmake (Eduard Feicho)</p></li>
+<li><p>Make miniglog threadsafe on non-windows system by using
+localtime_r() instead of localtime() for time formatting (Simon
+Rutishauser)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>1.11.0<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>New Features<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Adaptive numeric differentiation using Ridders’ method. (Tal
+Ben-Nun)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">CubicInterpolator</span></code> and <code class="docutils literal notranslate"><span class="pre">BiCubicInterpolator</span></code> to allow
+smooth interpolation of sampled functions and integration with
+automatic differentiation.</p></li>
+<li><p>Add method to return covariance in tangent space. (Michael Vitus &amp;
+Steve Hsu)</p></li>
+<li><p>Add Homogeneous vector parameterization. (Michael Vitus)</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">ProductParameterization</span></code>, a local parameterization that
+can be constructed as a cartesian product of other local
+parameterization.</p></li>
+<li><p>Add DynamicCostFunctionToFunctor. (David Gossow)</p></li>
+<li><p>Optionally export Ceres build directory into local CMake package
+registry.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> in the presence of dynamic
+sparsity.</p></li>
+</ol>
+</div>
+<div class="section" id="id16">
+<h3>Bug Fixes &amp; Minor Changes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Remove use of link-time optimisation (LTO) for all compilers due to
+portability issues with gtest / type_info::operator== &amp; Eigen with
+Clang on OS X vs GCC 4.9+ on Linux requiring contradictory ‘fixes’.</p></li>
+<li><p>Use link-time optimisation (LTO) only when compiling Ceres itself,
+not tests or examples, to bypass gtest / type_info::operator==
+issue.</p></li>
+<li><p>Use old minimum iOS version flags on Xcode &lt; 7.0.</p></li>
+<li><p>Add gtest-specific flags when building/using as a shared library.</p></li>
+<li><p>Clean up iOS.cmake to use xcrun/xcodebuild &amp; libtool.</p></li>
+<li><p>Import the latest version of <code class="docutils literal notranslate"><span class="pre">googletest</span></code>.</p></li>
+<li><p>Refactored <code class="docutils literal notranslate"><span class="pre">system_test</span></code> into <code class="docutils literal notranslate"><span class="pre">bundle_adjustment_test</span></code> and
+<code class="docutils literal notranslate"><span class="pre">system_test</span></code>, where each test case is its own test.</p></li>
+<li><p>Fix invalid memory access bug in
+<code class="docutils literal notranslate"><span class="pre">CompressedRowSparseMatrix::AppendRows</span></code> when it was called with a
+matrix of size zero.</p></li>
+<li><p>Build position independent code when compiling Ceres statically
+(Alexander Alekhin).</p></li>
+<li><p>Fix a bug in DetectStructure (Johannes Schonberger).</p></li>
+<li><p>Reduce memory footprint of SubsetParameterization (Johannes
+Schonberger).</p></li>
+<li><p>Fix for reorder program unit test when built without suitesparse
+(Sergey Sharybin).</p></li>
+<li><p>Fix a bug in the Schur eliminator (Werner Trobin).</p></li>
+<li><p>Fix a bug in the reordering code (Bernhard Zeisl).</p></li>
+<li><p>Add missing CERES_EXPORT to ComposedLoss (Simon Rutishauser).</p></li>
+<li><p>Add the option to use numeric differentiation to <code class="docutils literal notranslate"><span class="pre">nist</span></code> and
+<code class="docutils literal notranslate"><span class="pre">more_garbow_hillstrom</span></code>.</p></li>
+<li><p>Fix EIGENSPARSE option help s/t it displays in CMake ncurses GUI.</p></li>
+<li><p>Fix SparseNormalCholeskySolver with dynamic sparsity (Richie
+Stebbing).</p></li>
+<li><p>Remove legacy dependency detection macros.</p></li>
+<li><p>Fix failed if() condition expansion if gflags is not found.</p></li>
+<li><p>Update all CMake to lowercase function name style.</p></li>
+<li><p>Update minimum iOS version to 7.0 for shared_ptr/unordered_map.</p></li>
+<li><p>Fix bug in gflags’ &lt;= 2.1.2 exported CMake configuration.</p></li>
+<li><p>Remove the spec file needed for generating RPMs.</p></li>
+<li><p>Fix a typo in small_blas.h (Werber Trobin).</p></li>
+<li><p>Cleanup FindGflags &amp; use installed gflags CMake config if present.</p></li>
+<li><p>Add default glog install location on Windows to search paths
+(bvanevery).</p></li>
+<li><p>Add default Eigen install location on Windows to search paths
+(bvanevery).</p></li>
+<li><p>Fix explanation of config.h generation in bare config.h.</p></li>
+<li><p>Fix unused parameter compiler warnings in numeric_diff.h.</p></li>
+<li><p>Increase tolerance for a test in polynomial_test (Taylor Braun
+Jones).</p></li>
+<li><p>Fix addition of Gerrit commit hook when Ceres is a git submodule
+(Chris Cooper).</p></li>
+<li><p>Fix missing EIGEN_VERSION expansion typo.</p></li>
+<li><p>Fix links to SuiteSparse &amp; CXSparse (Henrique Mendonça).</p></li>
+<li><p>Ensure Eigen is at least 3.1.0 for Eigen/SparseCore.</p></li>
+<li><p>Add option to use C++11 (not TR1) shared_ptr &amp; unordered_map
+(Norman Goldstein).</p></li>
+<li><p>Fix an incorrect usage message in bundle_adjuster.cc</p></li>
+<li><p>Gracefully disable docs if Sphinx is not found.</p></li>
+<li><p>Explicitly use (new) default OS X rpath policy if present.</p></li>
+<li><p>Add support of EIGEN_SPARSE type in
+IsSparseLinearAlgebraLibraryTypeAvailable function (Pierre Moulon).</p></li>
+<li><p>Allow the LossFunction contained in a LossFunctionWrapper to be
+NULL. This is consistent with how NULL LossFunctions are treated
+everywhere else. (Simon Rutishauser).</p></li>
+<li><p>Improve numeric differentation near zero.</p></li>
+<li><p>Refactored DynamicNumericDiffCostFunction to use NumericDiff (Tal
+Ben-Nun).</p></li>
+<li><p>Remove use of :caption tag in Sphinx.</p></li>
+<li><p>Add a small test to make sure GradientProblemSolver works correctly
+(Petter Strandmark).</p></li>
+<li><p>Add simple unit tests for GradientProblem (Petter Strandmark).</p></li>
+<li><p>Make the robust curve fitting example robust.</p></li>
+<li><p>Homogenize convergence operators in docs and code (Johannes
+Schonberger).</p></li>
+<li><p>Add parameter_tolerance convergence to line search minimizer
+(Johannes Schonberger).</p></li>
+<li><p>Fix bug where pow(JetA,JetB) returned wrong result for JetA==0
+(Russell Smith).</p></li>
+<li><p>Remove duplicate step norm computation (Johannes Schonberger).</p></li>
+<li><p>Enhance usability when encountering Eigen version mismatches
+(Andrew Hundt).</p></li>
+<li><p>Add PLY file logger before and after BA in order to ease visual
+comparison (Pierre Moulon).</p></li>
+<li><p>Fix CMake config file docs to include 2.8.x &amp; 3.x styles.</p></li>
+<li><p>Python3 fixes (Markus Moll).</p></li>
+<li><p>Remove confusing code from DenseJacobianWriter (Michael Vitus).</p></li>
+<li><p>Add documentation on CMake package installation process.</p></li>
+<li><p>Revert a call to SolveUpperTriangularUsingCholesky.</p></li>
+<li><p>Make CERES_EIGEN_VERSION macro independent of CMake.</p></li>
+<li><p>Add versions of dependencies used to FullReport().</p></li>
+<li><p>Ensure local config.h is used if Ceres is already installed.</p></li>
+<li><p>Small messaging and comment updates in CMake</p></li>
+<li><p>Handle possible presence of library prefixes in MSVC (Sylvain
+Duchêne).</p></li>
+<li><p>Use -O2 not -O3 on MinGW to workaround issue with Eigen
+(<a class="reference external" href="mailto:s1m3mu3&#37;&#52;&#48;gmail&#46;com">s1m3mu3<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p></li>
+<li><p>Increase tolerance in small_blas test for Cygwin
+(<a class="reference external" href="mailto:s1m3mu3&#37;&#52;&#48;gmail&#46;com">s1m3mu3<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p></li>
+<li><p>Fix iOS cmake file for cmake 3.0 (Jack Feng)</p></li>
+<li><p>Fix missing gflags shlwapi dependency on MinGW (<a class="reference external" href="mailto:s1m3mu3&#37;&#52;&#48;gmail&#46;com">s1m3mu3<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p></li>
+<li><p>Add thread dependency &amp; fix namespace detection on Windows for
+gflags (<a class="reference external" href="mailto:arrigo&#46;benedetti&#37;&#52;&#48;gmail&#46;com">arrigo<span>&#46;</span>benedetti<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p></li>
+<li><p>Rename macros in the public API to have a <code class="docutils literal notranslate"><span class="pre">CERES_</span></code> prefix.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">OrderedGroup::Reverse()</span></code> when it is empty (Chris Sweeney).</p></li>
+<li><p>Update the code to point to ceres-solver.org.</p></li>
+<li><p>Update documentation to point to the GitHub issue tracker.</p></li>
+<li><p>Disable <code class="docutils literal notranslate"><span class="pre">LAPACK</span></code> for iOS builds. (Greg Coombe)</p></li>
+<li><p>Force use of single-thread in <code class="docutils literal notranslate"><span class="pre">Problem::Evaluate()</span></code> without
+OpenMP.</p></li>
+<li><p>Less strict check for multithreading. (Chris Sweeney)</p></li>
+<li><p>Update tolerances in small_blas_test.cc (Philipp Hubner)</p></li>
+<li><p>Documentation corrections (Steve Hsu)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">sampled_function.cc</span></code> (Pablo Speciale)</p></li>
+<li><p>Fix example code in the documentation. (Rodney Hoskinson)</p></li>
+<li><p>Improve the error handling in Conjugate Gradients.</p></li>
+<li><p>Improve preconditioner documentation.</p></li>
+<li><p>Remove dead code from fpclassify.h.</p></li>
+<li><p>Make Android.mk threads sensitive.</p></li>
+<li><p>Changed the <code class="docutils literal notranslate"><span class="pre">CURRENT_CONFIG_INSTALL_DIR</span></code> to be a variable local
+to Ceres. (Chris Sweeney)</p></li>
+<li><p>Fix typo in the comments in <code class="docutils literal notranslate"><span class="pre">Jet.h</span></code>. (Julius Ziegler)</p></li>
+<li><p>Add the ASL at ETH Zurich, Theia &amp; OpenPTrack to the list of users.</p></li>
+<li><p>Fixed a typo in the documentation. (Richard Stebbing)</p></li>
+<li><p>Fixed a boundary handling bug in the BiCubic interpolation
+code. (Bernhard Zeisl)</p></li>
+<li><p>Fixed a <code class="docutils literal notranslate"><span class="pre">MSVC</span></code> compilation bug in the cubic interpolation code
+(Johannes Schönberger)</p></li>
+<li><p>Add covariance related files to the Android build.</p></li>
+<li><p>Update Ubuntu 14.04 installation instructions. (Filippo Basso)</p></li>
+<li><p>Improved logging for linear solver failures.</p></li>
+<li><p>Improved crash messages in <code class="docutils literal notranslate"><span class="pre">Problem</span></code>.</p></li>
+<li><p>Hide Homebrew related variables in CMake GUI.</p></li>
+<li><p>Add SuiteSparse link dependency for
+compressed_col_sparse_matrix_utils_test.</p></li>
+<li><p>Autodetect Homebrew install prefix on OSX.</p></li>
+<li><p>Lint changes from William Rucklidge and Jim Roseborough.</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">std:</span></code> from <code class="docutils literal notranslate"><span class="pre">port.h</span></code></p></li>
+<li><p>Add note about glog not currently compiling against gflags 2.1.</p></li>
+<li><p>Add explicit no sparse linear algebra library available option.</p></li>
+<li><p>Improve some wording in the FAQ. (Vasily Vylkov)</p></li>
+<li><p>Delete Incomplete LQ Factorization.</p></li>
+<li><p>Add a pointer to MacPorts. (Markus Moll)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>1.10.0<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>New Features<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Ceres Solver can now be used to solve general unconstrained
+optimization problems. See the documentation for
+<code class="docutils literal notranslate"><span class="pre">GradientProblem</span></code> and <code class="docutils literal notranslate"><span class="pre">GradientProblemSolver</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Eigen</span></code> can now be as a sparse linear algebra backend. This can
+be done by setting
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::sparse_linear_algebra_library_type</span></code> to
+<code class="docutils literal notranslate"><span class="pre">EIGEN_SPARSE</span></code>. Performance should be comparable to
+<code class="docutils literal notranslate"><span class="pre">CX_SPARSE</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">Eigen</span></code> is a header only library, and some of the code
+related to sparse Cholesky factorization is LGPL, building Ceres
+with support for Eigen’s sparse linear algebra is disabled by
+default and should be enabled explicitly.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For good performance, use Eigen version 3.2.2 or later.</p>
+</div>
+</li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">EIGEN_SPARSE_QR</span></code> algorithm for covariance estimation using
+<code class="docutils literal notranslate"><span class="pre">Eigen</span></code>’s sparse QR factorization. (Michael Vitus)</p></li>
+<li><p>Faster inner iterations when using multiple threads.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">ITERATIVE_SCHUR</span></code> + <code class="docutils literal notranslate"><span class="pre">SCHUR_JACOBI</span></code> for small to medium
+sized problems (see documentation for
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::use_explicit_schur_complement</span></code>).</p></li>
+<li><p>Faster automatic Schur ordering.</p></li>
+<li><p>Reduced memory usage when solving problems with dynamic sparsity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CostFunctionToFunctor</span></code> now supports dynamic number of residuals.</p></li>
+<li><p>A complete re-write of the problem preprocessing phase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Summary::FullReport</span></code> now reports the build configuration
+for Ceres.</p></li>
+<li><p>When building on Android, the <code class="docutils literal notranslate"><span class="pre">NDK</span></code> version detection logic has
+been improved.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">CERES_VERSION</span></code> macro has been improved and replaced with the
+<code class="docutils literal notranslate"><span class="pre">CERES_VERSION_STRING</span></code> macro.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Solver::Options::IsValid</span></code> which allows users to validate
+their solver configuration before calling <code class="docutils literal notranslate"><span class="pre">Solve</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Problem::GetCostFunctionForResidualBlock</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Problem::GetLossFunctionForResidualBlock</span></code>.</p></li>
+<li><p>Added Tukey’s loss function. (Michael Vitus)</p></li>
+<li><p>Added RotationMatrixToQuaternion</p></li>
+<li><p>Compute &amp; report timing information for line searches.</p></li>
+<li><p>Autodetect gflags namespace.</p></li>
+<li><p>Expanded <code class="docutils literal notranslate"><span class="pre">more_garbow_hillstrom.cc</span></code>.</p></li>
+<li><p>Added a pointer to Tal Ben-Nun’s MSVC wrapper to the docs.</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">&lt;2,3,6&gt;</span></code> Schur template specialization. (Alessandro
+Dal Grande)</p></li>
+</ol>
+</div>
+<div class="section" id="id19">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NumericDiffFunctor</span></code> has been removed. It’s API was broken, and
+the implementation was an unnecessary layer of abstraction over
+<code class="docutils literal notranslate"><span class="pre">CostFunctionToFunctor</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POLAK_RIBIRERE</span></code> conjugate gradients direction type has been
+renamed to <code class="docutils literal notranslate"><span class="pre">POLAK_RIBIERE</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::solver_log</span></code> has been removed. If needed this
+iteration callback can easily be implemented in user code.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">SPARSE_CHOLESKY</span></code> algorithm for covariance estimation has
+been removed. It is not rank revealing and numerically poorly
+behaved. Sparse QR factorization is a much better way to do this.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">SPARSE_QR</span></code> algorithm for covariance estimation has been
+renamed to <code class="docutils literal notranslate"><span class="pre">SUITE_SPARSE_QR</span></code> to be consistent with
+<code class="docutils literal notranslate"><span class="pre">EIGEN_SPARSE_QR</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Summary::preconditioner_type</span></code> has been replaced with
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary::preconditioner_type_given</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary::preconditioner_type_used</span></code> to be more consistent
+with how information about the linear solver is communicated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CERES_VERSION</span></code> and <code class="docutils literal notranslate"><span class="pre">CERES_ABI_VERSION</span></code> macros were not
+terribly useful. They have been replaced with
+<code class="docutils literal notranslate"><span class="pre">CERES_VERSION_MAJOR</span></code>, <code class="docutils literal notranslate"><span class="pre">CERES_VERSION_MINOR</span></code> ,
+<code class="docutils literal notranslate"><span class="pre">CERES_VERSION_REVISION</span></code> and <code class="docutils literal notranslate"><span class="pre">CERES_VERSION_ABI</span></code> macros. In
+particular the functionality of <code class="docutils literal notranslate"><span class="pre">CERES_VERSION</span></code> is provided by
+<code class="docutils literal notranslate"><span class="pre">CERES_VERSION_STRING</span></code> macro.</p></li>
+</ol>
+</div>
+<div class="section" id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Do not try the gradient step if TR step line search fails.</p></li>
+<li><p>Fix missing include in libmv_bundle_adjuster on OSX.</p></li>
+<li><p>Conditionally log evaluation failure warnings.</p></li>
+<li><p>Runtime uses four digits after the decimal in Summary:FullReport.</p></li>
+<li><p>Better options checking for TrustRegionMinimizer.</p></li>
+<li><p>Fix RotationMatrixToAngleAxis when the angle of rotation is near
+PI. (Tobias Strauss)</p></li>
+<li><p>Sometimes gradient norm based convergence would miss a step with a
+substantial solution quality improvement. (Rodney Hoskinson)</p></li>
+<li><p>Ignore warnings from within Eigen/SparseQR (3.2.2).</p></li>
+<li><p>Fix empty Cache HELPSTRING parsing error on OS X 10.10 Yosemite.</p></li>
+<li><p>Fix a formatting error TrustRegionMinimizer logging.</p></li>
+<li><p>Add an explicit include for local_parameterization.h (cooordz)</p></li>
+<li><p>Fix a number of typos in the documentation (Martin Baeuml)</p></li>
+<li><p>Made the logging in TrustRegionMinimizer consistent with
+LineSearchMinimizer.</p></li>
+<li><p>Fix some obsolete documentation in CostFunction::Evaluate.</p></li>
+<li><p>Fix CG solver options for ITERATIVE_SCHUR, which did not copy
+min_num_iterations (Johannes Schönberger)</p></li>
+<li><p>Remove obsolete include of numeric_diff_functor.h. (Martin Baeuml)</p></li>
+<li><p>Fix max. linear solver iterations in ConjugateGradientsSolver
+(Johannes Schönberger)</p></li>
+<li><p>Expand check for lack of a sparse linear algebra library. (Michael
+Samples and Domink Reitzle)</p></li>
+<li><p>Fix Eigen Row/ColMajor bug in NumericDiffCostFunction. (Dominik
+Reitzle)</p></li>
+<li><p>Fix crash in Covariance if # threads &gt; 1 requested without OpenMP.</p></li>
+<li><p>Fixed Malformed regex. (Björn Piltz)</p></li>
+<li><p>Fixed MSVC error C2124: divide or mod by zero. (Björn Piltz)</p></li>
+<li><p>Add missing #include of &lt;limits&gt; for loss functions.</p></li>
+<li><p>Make canned loss functions more robust.</p></li>
+<li><p>Fix type of suppressed compiler warning for Eigen 3.2.0.</p></li>
+<li><p>Suppress unused variable warning from Eigen 3.2.0.</p></li>
+<li><p>Add “make install” to the install instructions.</p></li>
+<li><p>Correct formula in documentation of
+Solver::Options::function_tolerance. (Alessandro Gentilini)</p></li>
+<li><p>Add release flags to iOS toolchain.</p></li>
+<li><p>Fix a broken hyperlink in the documentation. (Henrique Mendonca)</p></li>
+<li><p>Add fixes for multiple definitions of ERROR on Windows to docs.</p></li>
+<li><p>Compile miniglog into Ceres if enabled on all platforms.</p></li>
+<li><p>Add two missing files to Android.mk (Greg Coombe)</p></li>
+<li><p>Fix Cmake error when using miniglog. (Greg Coombe)</p></li>
+<li><p>Don’t build miniglog unconditionally as a static library (Björn
+Piltz)</p></li>
+<li><p>Added a missing include. (Björn Piltz)</p></li>
+<li><p>Conditionally disable SparseNormalCholesky.</p></li>
+<li><p>Fix a memory leak in program_test.cc.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>1.9.0<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>New Features<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Bounds constraints: Support for upper and/or lower bounds on
+parameters when using the trust region minimizer.</p></li>
+<li><p>Dynamic Sparsity: Problems in which the sparsity structure of the
+Jacobian changes over the course of the optimization can now be
+solved much more efficiently. (Richard Stebbing)</p></li>
+<li><p>Improved support for Microsoft Visual C++ including the ability to
+build and ship DLLs. (Björn Piltz, Alex Stewart and Sergey
+Sharybin)</p></li>
+<li><p>Support for building on iOS 6.0 or higher (Jack Feng).</p></li>
+<li><p>Autogeneration of config.h that captures all the defines used to
+build and use Ceres Solver.</p></li>
+<li><p>Simpler and more informative solver termination type
+reporting. (See below for more details)</p></li>
+<li><p>New <a class="reference external" href="http://www.ceres-solver.org">website</a> based entirely on
+Sphinx.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AutoDiffLocalParameterization</span></code> allows the use of automatic
+differentiation for defining <code class="docutils literal notranslate"><span class="pre">LocalParameterization</span></code> objects
+(Alex Stewart)</p></li>
+<li><p>LBFGS is faster due to fewer memory copies.</p></li>
+<li><p>Parameter blocks are not restricted to be less than 32k in size,
+they can be up to 2G in size.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> solver when using <code class="docutils literal notranslate"><span class="pre">CX_SPARSE</span></code>
+as the sparse linear algebra library.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Problem::IsParameterBlockPresent</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Problem::GetParameterization</span></code>.</p></li>
+<li><p>Added the (2,4,9) and (2,4,8) template specializations.</p></li>
+<li><p>An example demonstrating the use of
+DynamicAutoDiffCostFunction. (Joydeep Biswas)</p></li>
+<li><p>Homography estimation example from Blender demonstrating the use of
+a custom <code class="docutils literal notranslate"><span class="pre">IterationCallback</span></code>. (Sergey Sharybin)</p></li>
+<li><p>Support user passing a custom CMAKE_MODULE_PATH (for BLAS /
+LAPACK).</p></li>
+</ol>
+</div>
+<div class="section" id="id22">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::linear_solver_ordering</span></code> used to be a naked
+pointer that Ceres took ownership of. This is error prone behaviour
+which leads to problems when copying the <code class="docutils literal notranslate"><span class="pre">Solver::Options</span></code> struct
+around. This has been replaced with a <code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> to handle
+ownership correctly across copies.</p></li>
+<li><p>The enum used for reporting the termination/convergence status of
+the solver has been renamed from <code class="docutils literal notranslate"><span class="pre">SolverTerminationType</span></code> to
+<code class="docutils literal notranslate"><span class="pre">TerminationType</span></code>.</p>
+<p>The enum values have also changed. <code class="docutils literal notranslate"><span class="pre">FUNCTION_TOLERANCE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GRADIENT_TOLERANCE</span></code> and <code class="docutils literal notranslate"><span class="pre">PARAMETER_TOLERANCE</span></code> have all been
+replaced by <code class="docutils literal notranslate"><span class="pre">CONVERGENCE</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMERICAL_FAILURE</span></code> has been replaced by <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">USER_ABORT</span></code> has been renamed to <code class="docutils literal notranslate"><span class="pre">USER_FAILURE</span></code>.</p>
+<p>Further <code class="docutils literal notranslate"><span class="pre">Solver::Summary::error</span></code> has been renamed to
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary::message</span></code>. It contains a more detailed
+explanation for why the solver terminated.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::gradient_tolerance</span></code> used to be a relative
+gradient tolerance. i.e., The solver converged when</p>
+<div class="math notranslate nohighlight">
+\[\|g(x)\|_\infty &lt; \text{gradient_tolerance} *
+\|g(x_0)\|_\infty\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(x)\)</span> is the gradient of the objective function at
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_0\)</span> is the parmeter vector at the start of
+the optimization.</p>
+<p>This has changed to an absolute tolerance, i.e. the solver
+converges when</p>
+<div class="math notranslate nohighlight">
+\[\|g(x)\|_\infty &lt; \text{gradient_tolerance}\]</div>
+</li>
+<li><p>Ceres cannot be built without the line search minimizer
+anymore. Thus the preprocessor define
+<code class="docutils literal notranslate"><span class="pre">CERES_NO_LINE_SEARCH_MINIMIZER</span></code> has been removed.</p></li>
+</ol>
+</div>
+<div class="section" id="id23">
+<h3>Bug Fixes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Disabled warning C4251. (Björn Piltz)</p></li>
+<li><p>Do not propagate 3d party libs through
+<cite>IMPORTED_LINK_INTERFACE_LIBRARIES_[DEBUG/RELEASE]</cite> mechanism when
+building shared libraries. (Björn Piltz)</p></li>
+<li><p>Fixed errant verbose levels (Björn Piltz)</p></li>
+<li><p>Variety of code cleanups, optimizations and bug fixes to the line
+search minimizer code (Alex Stewart)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">BlockSparseMatrix::Transpose</span></code> when the matrix has row and
+column blocks. (Richard Bowen)</p></li>
+<li><p>Better error checking when <code class="docutils literal notranslate"><span class="pre">Problem::RemoveResidualBlock</span></code> is
+called. (Alex Stewart)</p></li>
+<li><p>Fixed a memory leak in <code class="docutils literal notranslate"><span class="pre">SchurComplementSolver</span></code>.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">epsilon()</span></code> method to <code class="docutils literal notranslate"><span class="pre">NumTraits&lt;ceres::Jet&lt;T,</span> <span class="pre">N&gt;</span>
+<span class="pre">&gt;</span></code>. (Filippo Basso)</p></li>
+<li><p>Fixed a bug in <cite>CompressedRowSparseMatrix::AppendRows`</cite> and
+<code class="docutils literal notranslate"><span class="pre">DeleteRows</span></code>.q</p></li>
+<li><p>Handle empty problems consistently.</p></li>
+<li><p>Restore the state of the <code class="docutils literal notranslate"><span class="pre">Problem</span></code> after a call to
+<code class="docutils literal notranslate"><span class="pre">Problem::Evaluate</span></code>. (Stefan Leutenegger)</p></li>
+<li><p>Better error checking and reporting for linear solvers.</p></li>
+<li><p>Use explicit formula to solve quadratic polynomials instead of the
+eigenvalue solver.</p></li>
+<li><p>Fix constant parameter handling in inner iterations (Mikael
+Persson).</p></li>
+<li><p>SuiteSparse errors do not cause a fatal crash anymore.</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">corrector_test.cc</span></code>.</p></li>
+<li><p>Relax the requirements on loss function derivatives.</p></li>
+<li><p>Minor bugfix to logging.h (Scott Ettinger)</p></li>
+<li><p>Updated <code class="docutils literal notranslate"><span class="pre">gmock</span></code> and <code class="docutils literal notranslate"><span class="pre">gtest</span></code> to the latest upstream version.</p></li>
+<li><p>Fix build breakage on old versions of SuiteSparse.</p></li>
+<li><p>Fixed build issues related to Clang / LLVM 3.4 (Johannes
+Schönberger)</p></li>
+<li><p>METIS_FOUND is never set. Changed the commit to fit the setting of
+the other #._FOUND definitions. (Andreas Franek)</p></li>
+<li><p>Variety of bug fixes and cleanups to the <code class="docutils literal notranslate"><span class="pre">CMake</span></code> build system
+(Alex Stewart)</p></li>
+<li><p>Removed fictitious shared library target from the NDK build.</p></li>
+<li><p>Solver::Options now uses <code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> to handle ownership of
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::linear_solver_ordering</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Solver::Options::inner_iteration_ordering</span></code>. As a consequence the
+<code class="docutils literal notranslate"><span class="pre">NDK</span></code> build now depends on <code class="docutils literal notranslate"><span class="pre">libc++</span></code> from the <code class="docutils literal notranslate"><span class="pre">LLVM</span></code> project.</p></li>
+<li><p>Variety of lint cleanups (William Rucklidge &amp; Jim Roseborough)</p></li>
+<li><p>Various internal cleanups including dead code removal.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id24">
+<h2>1.8.0<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id25">
+<h3>New Features<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Significant improved <code class="docutils literal notranslate"><span class="pre">CMake</span></code> files with better robustness,
+dependency checking and GUI support. (Alex Stewart)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">DynamicNumericDiffCostFunction</span></code> for numerically
+differentiated cost functions whose sizing is determined at run
+time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code> now supports a dynamic number of
+residuals just like <code class="docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span></code> exposes more of its structure in its API.</p></li>
+<li><p>Faster automatic differentiation (Tim Langlois)</p></li>
+<li><p>Added the commonly occurring <code class="docutils literal notranslate"><span class="pre">2_d_d</span></code> template specialization for
+the Schur Eliminator.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">ITERATIVE_SCHUR</span></code> solver using template specializations.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">SCHUR_JACOBI</span></code> preconditioner construction.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">AngleAxisRotatePoint</span></code>.</p></li>
+<li><p>Faster Jacobian evaluation when a loss function is used.</p></li>
+<li><p>Added support for multiple clustering algorithms in visibility
+based preconditioning, including a new fast single linkage
+clustering algorithm.</p></li>
+</ol>
+</div>
+<div class="section" id="id26">
+<h3>Bug Fixes<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix ordering of ParseCommandLineFlags() &amp; InitGoogleTest() for
+Windows. (Alex Stewart)</p></li>
+<li><p>Remove DCHECK_GE checks from fixed_array.h.</p></li>
+<li><p>Fix build on MSVC 2013 (Petter Strandmark)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">AngleAxisToRotationMatrix</span></code> near zero.</p></li>
+<li><p>Move <code class="docutils literal notranslate"><span class="pre">CERES_HASH_NAMESPACE</span></code> macros to <code class="docutils literal notranslate"><span class="pre">collections_port.h</span></code>.</p></li>
+<li><p>Fix handling of unordered_map/unordered_set on OSX 10.9.0.</p></li>
+<li><p>Explicitly link to libm for <code class="docutils literal notranslate"><span class="pre">curve_fitting_c.c</span></code>. (Alex Stewart)</p></li>
+<li><p>Minor type conversion fix to autodiff.h</p></li>
+<li><p>Remove RuntimeNumericDiffCostFunction.</p></li>
+<li><p>Fix operator= ambiguity on some versions of Clang. (Alex Stewart)</p></li>
+<li><p>Various Lint cleanups (William Rucklidge &amp; Jim Roseborough)</p></li>
+<li><p>Modified installation folders for Windows. (Pablo Speciale)</p></li>
+<li><p>Added librt to link libraries for SuiteSparse_config on
+Linux. (Alex Stewart)</p></li>
+<li><p>Check for presence of return-type-c-linkage option with
+Clang. (Alex Stewart)</p></li>
+<li><p>Fix Problem::RemoveParameterBlock after calling solve. (Simon
+Lynen)</p></li>
+<li><p>Fix a free/delete bug in covariance_impl.cc</p></li>
+<li><p>Fix two build errors. (Dustin Lang)</p></li>
+<li><p>Add RequireInitialization = 1 to NumTraits::Jet.</p></li>
+<li><p>Update gmock/gtest to 1.7.0</p></li>
+<li><p>Added IterationSummary::gradient_norm.</p></li>
+<li><p>Reduced verbosity of the inner iteration minimizer.</p></li>
+<li><p>Fixed a bug in TrustRegionMinimizer. (Michael Vitus)</p></li>
+<li><p>Removed android/build_android.sh.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id27">
+<h2>1.7.0<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::sparse_linear_algebra_library</span></code> has been renamed
+to <code class="docutils literal notranslate"><span class="pre">Solver::Options::sparse_linear_algebra_library_type</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="id29">
+<h3>New Features<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Sparse and dense covariance estimation.</p></li>
+<li><p>A new Wolfe line search. (Alex Stewart)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BFGS</span></code> line search direction. (Alex Stewart)</p></li>
+<li><p>C API</p></li>
+<li><p>Speeded up the use of loss functions &gt; 17x.</p></li>
+<li><p>Faster <code class="docutils literal notranslate"><span class="pre">DENSE_QR</span></code>, <code class="docutils literal notranslate"><span class="pre">DENSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">DENSE_SCHUR</span></code>
+solvers.</p></li>
+<li><p>Support for multiple dense linear algebra backends. In particular
+optimized <code class="docutils literal notranslate"><span class="pre">BLAS</span></code> and <code class="docutils literal notranslate"><span class="pre">LAPACK</span></code> implementations (e.g., Intel MKL,
+ACML, OpenBLAS etc) can now be used to do the dense linear algebra
+for <code class="docutils literal notranslate"><span class="pre">DENSE_QR</span></code>, <code class="docutils literal notranslate"><span class="pre">DENSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">DENSE_SCHUR</span></code></p></li>
+<li><p>Use of Inner iterations can now be adaptively stopped. Iteration
+and runtime statistics for inner iterations are not reported in
+<code class="docutils literal notranslate"><span class="pre">Solver::Summary</span></code> and <code class="docutils literal notranslate"><span class="pre">Solver::Summary::FullReport</span></code>.</p></li>
+<li><p>Improved inner iteration step acceptance criterion.</p></li>
+<li><p>Add BlockRandomAccessCRSMatrix.</p></li>
+<li><p>Speeded up automatic differentiation by 7%.</p></li>
+<li><p>Bundle adjustment example from libmv/Blender (Sergey Sharybin)</p></li>
+<li><p>Shared library building is now controlled by CMake, rather than a
+custom solution. Previously, Ceres had a custom option, but this is
+now deprecated in favor of CMake’s built in support for switching
+between static and shared. Turn on BUILD_SHARED_LIBS to get shared
+Ceres libraries.</p></li>
+<li><p>No more dependence on Protocol Buffers.</p></li>
+<li><p>Incomplete LQ factorization.</p></li>
+<li><p>Ability to write trust region problems to disk.</p></li>
+<li><p>Add sinh, cosh, tanh and tan functions to automatic differentiation
+(Johannes Schönberger)</p></li>
+<li><p>Simplifications to the cmake build file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">miniglog</span></code> can now be used as a replacement for <code class="docutils literal notranslate"><span class="pre">google-glog</span></code>
+on non Android platforms. (This is NOT recommended).</p></li>
+</ol>
+</div>
+<div class="section" id="id30">
+<h3>Bug Fixes<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">ITERATIVE_SCHUR</span></code> solver to work correctly when the schur
+complement is of size zero. (Soohyun Bae)</p></li>
+<li><p>Fix the <code class="docutils literal notranslate"><span class="pre">spec</span></code> file for generating <code class="docutils literal notranslate"><span class="pre">RPM</span></code> packages (Brian Pitts
+and Taylor Braun-Jones).</p></li>
+<li><p>Fix how ceres calls CAMD (Manas Jagadev)</p></li>
+<li><p>Fix breakage on old versions of SuiteSparse. (Fisher Yu)</p></li>
+<li><p>Fix warning C4373 in Visual Studio (Petter Strandmark)</p></li>
+<li><p>Fix compilation error caused by missing suitesparse headers and
+reorganize them to be more robust. (Sergey Sharybin)</p></li>
+<li><p>Check GCC Version before adding -fast compiler option on
+OSX. (Steven Lovegrove)</p></li>
+<li><p>Add documentation for minimizer progress output.</p></li>
+<li><p>Lint and other cleanups (William Rucklidge and James Roseborough)</p></li>
+<li><p>Collections port fix for MSC 2008 (Sergey Sharybin)</p></li>
+<li><p>Various corrections and cleanups in the documentation.</p></li>
+<li><p>Change the path where CeresConfig.cmake is installed (Pablo
+Speciale)</p></li>
+<li><p>Minor errors in documentation (Pablo Speciale)</p></li>
+<li><p>Updated depend.cmake to follow CMake IF convention. (Joydeep
+Biswas)</p></li>
+<li><p>Stabilize the schur ordering algorithm.</p></li>
+<li><p>Update license header in split.h.</p></li>
+<li><p>Enabling -O4 (link-time optimization) only if compiler/linker
+support it. (Alex Stewart)</p></li>
+<li><p>Consistent glog path across files.</p></li>
+<li><p>ceres-solver.spec: Use cleaner, more conventional Release string
+(Taylor Braun-Jones)</p></li>
+<li><p>Fix compile bug on RHEL6 due to missing header (Taylor Braun-Jones)</p></li>
+<li><p>CMake file is less verbose.</p></li>
+<li><p>Use the latest upstream version of google-test and gmock.</p></li>
+<li><p>Rationalize some of the variable names in <code class="docutils literal notranslate"><span class="pre">Solver::Options</span></code>.</p></li>
+<li><p>Improve Summary::FullReport when line search is used.</p></li>
+<li><p>Expose line search parameters in <code class="docutils literal notranslate"><span class="pre">Solver::Options</span></code>.</p></li>
+<li><p>Fix update of L-BFGS history buffers after they become full. (Alex
+Stewart)</p></li>
+<li><p>Fix configuration error on systems without SuiteSparse installed
+(Sergey Sharybin)</p></li>
+<li><p>Enforce the read call returns correct value in
+<code class="docutils literal notranslate"><span class="pre">curve_fitting_c.c</span></code> (Arnaud Gelas)</p></li>
+<li><p>Fix DynamicAutoDiffCostFunction (Richard Stebbing)</p></li>
+<li><p>Fix Problem::RemoveParameterBlock documentation (Johannes
+Schönberger)</p></li>
+<li><p>Fix a logging bug in parameter_block.h</p></li>
+<li><p>Refactor the preconditioner class structure.</p></li>
+<li><p>Fix an uninitialized variable warning when building with <code class="docutils literal notranslate"><span class="pre">GCC</span></code>.</p></li>
+<li><p>Fix a reallocation bug in
+<code class="docutils literal notranslate"><span class="pre">CreateJacobianBlockSparsityTranspose</span></code>. (Yuliy Schwartzburg)</p></li>
+<li><p>Add a define for O_BINARY.</p></li>
+<li><p>Fix miniglog-based Android NDK build; now works with NDK r9. (Scott
+Ettinger)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>1.6.0<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id32">
+<h3>New Features<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Major Performance improvements.</p>
+<ol class="loweralpha simple">
+<li><p>Schur type solvers (<code class="docutils literal notranslate"><span class="pre">SPARSE_SCHUR</span></code>, <code class="docutils literal notranslate"><span class="pre">DENSE_SCHUR</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ITERATIVE_SCHUR</span></code>) are significantly faster due to custom BLAS
+routines and fewer heap allocations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPARSE_SCHUR</span></code> when used with <code class="docutils literal notranslate"><span class="pre">CX_SPARSE</span></code> now uses a block
+AMD for much improved factorization performance.</p></li>
+<li><p>The jacobian matrix is pre-ordered so that
+<code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code> and <code class="docutils literal notranslate"><span class="pre">SPARSE_SCHUR</span></code> do not have to
+make copies inside <code class="docutils literal notranslate"><span class="pre">CHOLMOD</span></code>.</p></li>
+<li><p>Faster autodiff by replacing division by multplication by inverse.</p></li>
+<li><p>When compiled without threads, the schur eliminator does not pay
+the penalty for locking and unlocking mutexes.</p></li>
+</ol>
+</li>
+<li><p>Users can now use <code class="docutils literal notranslate"><span class="pre">linear_solver_ordering</span></code> to affect the
+fill-reducing ordering used by <code class="docutils literal notranslate"><span class="pre">SUITE_SPARSE</span></code> for
+<code class="docutils literal notranslate"><span class="pre">SPARSE_NORMAL_CHOLESKY</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Problem</span></code> can now report the set of parameter blocks it knows about.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TrustRegionMinimizer</span></code> uses the evaluator to compute the gradient
+instead of a matrix vector multiply.</p></li>
+<li><p>On <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">OS</span></code>, whole program optimization is enabled.</p></li>
+<li><p>Users can now use automatic differentiation to define new
+<code class="docutils literal notranslate"><span class="pre">LocalParameterization</span></code> objects. (Sergey Sharybin)</p></li>
+<li><p>Enable larger tuple sizes for Visual Studio 2012. (Petter Strandmark)</p></li>
+</ol>
+</div>
+<div class="section" id="id33">
+<h3>Bug Fixes<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Update the documentation for <code class="docutils literal notranslate"><span class="pre">CostFunction</span></code>.</p></li>
+<li><p>Fixed a typo in the documentation. (Pablo Speciale)</p></li>
+<li><p>Fix a typo in suitesparse.cc.</p></li>
+<li><p>Bugfix in <code class="docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code>. (Nicolas Brodu)</p></li>
+<li><p>Death to BlockSparseMatrixBase.</p></li>
+<li><p>Change Minimizer::Options::min_trust_region_radius to double.</p></li>
+<li><p>Update to compile with stricter gcc checks. (Joydeep Biswas)</p></li>
+<li><p>Do not modify cached CMAKE_CXX_FLAGS_RELEASE. (Sergey Sharybin)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;iterator&gt;</span></code> needed for back_insert_iterator. (Petter Strandmark)</p></li>
+<li><p>Lint cleanup. (William Rucklidge)</p></li>
+<li><p>Documentation corrections. (Pablo Speciale)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id34">
+<h2>1.5.0<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id35">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Problem::Evaluate</span></code>. Now you can evaluate a problem or any
+part of it without calling the solver.</p>
+<p>In light of this the following settings have been deprecated and
+removed from the API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_residuals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_gradient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_jacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_residuals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_gradient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_jacobian</span></code></p></li>
+</ul>
+<p>Instead we recommend using something like this.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Problem</span> <span class="n">problem</span><span class="p">;</span>
+<span class="c1">// Build problem</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">initial_residuals</span><span class="p">;</span>
+<span class="n">problem</span><span class="p">.</span><span class="n">Evaluate</span><span class="p">(</span><span class="n">Problem</span><span class="o">::</span><span class="n">EvaluateOptions</span><span class="p">(),</span>
+                 <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* No cost */</span>
+                 <span class="o">&amp;</span><span class="n">initial_residuals</span><span class="p">,</span>
+                 <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* No gradient */</span>
+                 <span class="nb">NULL</span>  <span class="cm">/* No jacobian */</span><span class="p">);</span>
+
+<span class="n">Solver</span><span class="o">::</span><span class="n">Options</span> <span class="n">options</span><span class="p">;</span>
+<span class="n">Solver</span><span class="o">::</span><span class="n">Summary</span> <span class="n">summary</span><span class="p">;</span>
+<span class="n">Solver</span><span class="o">::</span><span class="n">Solve</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">problem</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">summary</span><span class="p">);</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">final_residuals</span><span class="p">;</span>
+<span class="n">problem</span><span class="p">.</span><span class="n">Evaluate</span><span class="p">(</span><span class="n">Problem</span><span class="o">::</span><span class="n">EvaluateOptions</span><span class="p">(),</span>
+                 <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* No cost */</span>
+                 <span class="o">&amp;</span><span class="n">final_residuals</span><span class="p">,</span>
+                 <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* No gradient */</span>
+                 <span class="nb">NULL</span>  <span class="cm">/* No jacobian */</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id36">
+<h3>New Features<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Problem now supports removal of ParameterBlocks and
+ResidualBlocks. There is a space/time tradeoff in doing this which
+is controlled by
+<code class="docutils literal notranslate"><span class="pre">Problem::Options::enable_fast_parameter_block_removal</span></code>.</p></li>
+<li><p>Ceres now supports Line search based optimization algorithms in
+addition to trust region algorithms. Currently there is support for
+gradient descent, non-linear conjugate gradient and LBFGS search
+directions.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Problem::Evaluate</span></code>. Now you can evaluate a problem or any
+part of it without calling the solver. In light of this the
+following settings have been deprecated and removed from the API.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_residuals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_gradient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_initial_jacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_residuals</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_gradient</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Solver::Options::return_final_jacobian</span></code></p></li>
+</ul>
+</li>
+<li><p>New, much improved HTML documentation using Sphinx.</p></li>
+<li><p>Changed <code class="docutils literal notranslate"><span class="pre">NumericDiffCostFunction</span></code> to take functors like
+<code class="docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>.</p></li>
+<li><p>Added support for mixing automatic, analytic and numeric
+differentiation. This is done by adding <code class="docutils literal notranslate"><span class="pre">CostFunctionToFunctor</span></code>
+and <code class="docutils literal notranslate"><span class="pre">NumericDiffFunctor</span></code> objects to the API.</p></li>
+<li><p>Sped up the robust loss function correction logic when residual is
+one dimensional.</p></li>
+<li><p>Sped up <code class="docutils literal notranslate"><span class="pre">DenseQRSolver</span></code> by changing the way dense jacobians are
+stored. This is a 200-500% improvement in linear solver performance
+depending on the size of the problem.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENSE_SCHUR</span></code> now supports multi-threading.</p></li>
+<li><p>Greatly expanded <code class="docutils literal notranslate"><span class="pre">Summary::FullReport</span></code>:</p>
+<ul class="simple">
+<li><p>Report the ordering used by the <code class="docutils literal notranslate"><span class="pre">LinearSolver</span></code>.</p></li>
+<li><p>Report the ordering used by the inner iterations.</p></li>
+<li><p>Execution timing breakdown into evaluations and linear solves.</p></li>
+<li><p>Effective size of the problem solved by the solver, which now
+accounts for the size of the tangent space when using a
+<code class="docutils literal notranslate"><span class="pre">LocalParameterization</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Ceres when run at the <code class="docutils literal notranslate"><span class="pre">VLOG</span></code> level 3 or higher will report
+detailed timing information about its internals.</p></li>
+<li><p>Remove extraneous initial and final residual evaluations. This
+speeds up the solver a bit.</p></li>
+<li><p>Automatic differenatiation with a dynamic number of parameter
+blocks. (Based on an idea by Thad Hughes).</p></li>
+<li><p>Sped up problem construction and destruction.</p></li>
+<li><p>Added matrix adapters to <code class="docutils literal notranslate"><span class="pre">rotation.h</span></code> so that the rotation matrix
+routines can work with row and column major matrices. (Markus Moll)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SCHUR_JACOBI</span></code> can now be used without <code class="docutils literal notranslate"><span class="pre">SuiteSparse</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">.spec</span></code> file for producing RPMs. (Taylor Braun-Jones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMake</span></code> can now build the sphinx documentation (Pablo Speciale)</p></li>
+<li><p>Add support for creating a CMake config file during build to make
+embedding Ceres in other CMake-using projects easier. (Pablo
+Speciale).</p></li>
+<li><p>Better error reporting in <code class="docutils literal notranslate"><span class="pre">Problem</span></code> for missing parameter blocks.</p></li>
+<li><p>A more flexible <code class="docutils literal notranslate"><span class="pre">Android.mk</span></code> and a more modular build. If binary
+size and/or compile time is a concern, larger parts of the solver
+can be disabled at compile time.</p></li>
+</ol>
+</div>
+<div class="section" id="id37">
+<h3>Bug Fixes<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Compilation fixes for MSVC2010 (Sergey Sharybin)</p></li>
+<li><p>Fixed “deprecated conversion from string constant to char*”
+warnings. (Pablo Speciale)</p></li>
+<li><p>Correctly propagate ifdefs when building without Schur eliminator
+template specializations.</p></li>
+<li><p>Correct handling of <code class="docutils literal notranslate"><span class="pre">LIB_SUFFIX</span></code> on Linux. (Yuliy Schwartzburg).</p></li>
+<li><p>Code and signature cleanup in <code class="docutils literal notranslate"><span class="pre">rotation.h</span></code>.</p></li>
+<li><p>Make examples independent of internal code.</p></li>
+<li><p>Disable unused member in <code class="docutils literal notranslate"><span class="pre">gtest</span></code> which results in build error on
+OS X with latest Xcode. (Taylor Braun-Jones)</p></li>
+<li><p>Pass the correct flags to the linker when using
+<code class="docutils literal notranslate"><span class="pre">pthreads</span></code>. (Taylor Braun-Jones)</p></li>
+<li><p>Only use <code class="docutils literal notranslate"><span class="pre">cmake28</span></code> macro when building on RHEL6. (Taylor
+Braun-Jones)</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">-Wno-return-type-c-linkage</span></code> when compiling with
+GCC. (Taylor Braun-Jones)</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">previous</span> <span class="pre">prototype</span></code> warnings. (Sergey Sharybin)</p></li>
+<li><p>MinGW build fixes. (Sergey Sharybin)</p></li>
+<li><p>Lots of minor code and lint fixes. (William Rucklidge)</p></li>
+<li><p>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">solver_impl.cc</span></code> residual evaluation. (Markus
+Moll)</p></li>
+<li><p>Fixed variadic evaluation bug in <code class="docutils literal notranslate"><span class="pre">AutoDiff</span></code>.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">SolverImpl</span></code> tests.</p></li>
+<li><p>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">DenseSparseMatrix::ToDenseMatrix()</span></code>.</p></li>
+<li><p>Fixed an initialization bug in <code class="docutils literal notranslate"><span class="pre">ProgramEvaluator</span></code>.</p></li>
+<li><p>Fixes to Android.mk paths (Carlos Hernandez)</p></li>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">nist.cc</span></code> to compute accuracy based on ground truth
+solution rather than the ground truth function value.</p></li>
+<li><p>Fixed a memory leak in <code class="docutils literal notranslate"><span class="pre">cxsparse.cc</span></code>. (Alexander Mordvintsev).</p></li>
+<li><p>Fixed the install directory for libraries by correctly handling
+<code class="docutils literal notranslate"><span class="pre">LIB_SUFFIX</span></code>. (Taylor Braun-Jones)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id38">
+<h2>1.4.0<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id39">
+<h3>Backward Incompatible API Changes<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<p>The new ordering API breaks existing code. Here the common case fixes.</p>
+<p><strong>Before</strong></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">.</span><span class="n">linear_solver_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">DENSE_SCHUR</span>
+<span class="n">options</span><span class="p">.</span><span class="n">ordering_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">SCHUR</span>
+</pre></div>
+</div>
+<p><strong>After</strong></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">.</span><span class="n">linear_solver_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">DENSE_SCHUR</span>
+</pre></div>
+</div>
+<p><strong>Before</strong></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">.</span><span class="n">linear_solver_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">DENSE_SCHUR</span><span class="p">;</span>
+<span class="n">options</span><span class="p">.</span><span class="n">ordering_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">USER</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_points</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">options</span><span class="p">.</span><span class="n">ordering</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">my_points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_cameras</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">options</span><span class="p">.</span><span class="n">ordering</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">my_cameras</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="n">options</span><span class="p">.</span><span class="n">num_eliminate_blocks</span> <span class="o">=</span> <span class="n">num_points</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>After</strong></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">.</span><span class="n">linear_solver_type</span> <span class="o">=</span> <span class="n">ceres</span><span class="o">::</span><span class="n">DENSE_SCHUR</span><span class="p">;</span>
+<span class="n">options</span><span class="p">.</span><span class="n">ordering</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ceres</span><span class="o">::</span><span class="n">ParameterBlockOrdering</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_points</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">options</span><span class="p">.</span><span class="n">linear_solver_ordering</span><span class="o">-&gt;</span><span class="n">AddElementToGroup</span><span class="p">(</span><span class="n">my_points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_cameras</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">options</span><span class="p">.</span><span class="n">linear_solver_ordering</span><span class="o">-&gt;</span><span class="n">AddElementToGroup</span><span class="p">(</span><span class="n">my_cameras</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id40">
+<h3>New Features<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>A new richer, more expressive and consistent API for ordering
+parameter blocks.</p></li>
+<li><p>A non-linear generalization of Ruhe &amp; Wedin’s Algorithm II. This
+allows the user to use variable projection on separable and
+non-separable non-linear least squares problems. With
+multithreading, this results in significant improvements to the
+convergence behavior of the solver at a small increase in run time.</p></li>
+<li><p>An image denoising example using fields of experts. (Petter
+Strandmark)</p></li>
+<li><p>Defines for Ceres version and ABI version.</p></li>
+<li><p>Higher precision timer code where available. (Petter Strandmark)</p></li>
+<li><p>Example Makefile for users of Ceres.</p></li>
+<li><p>IterationSummary now informs the user when the step is a
+non-monotonic step.</p></li>
+<li><p>Fewer memory allocations when using <code class="docutils literal notranslate"><span class="pre">DenseQRSolver</span></code>.</p></li>
+<li><p>GradientChecker for testing CostFunctions (William Rucklidge)</p></li>
+<li><p>Add support for cost functions with 10 parameter blocks in
+<code class="docutils literal notranslate"><span class="pre">Problem</span></code>. (Fisher)</p></li>
+<li><p>Add support for 10 parameter blocks in <code class="docutils literal notranslate"><span class="pre">AutoDiffCostFunction</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="id41">
+<h3>Bug Fixes<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>static cast to force Eigen::Index to long conversion</p></li>
+<li><p>Change LOG(ERROR) to LOG(WARNING) in <code class="docutils literal notranslate"><span class="pre">schur_complement_solver.cc</span></code>.</p></li>
+<li><p>Remove verbose logging from <code class="docutils literal notranslate"><span class="pre">DenseQRSolve</span></code>.</p></li>
+<li><p>Fix the Android NDK build.</p></li>
+<li><p>Better handling of empty and constant Problems.</p></li>
+<li><p>Remove an internal header that was leaking into the public API.</p></li>
+<li><p>Memory leak in <code class="docutils literal notranslate"><span class="pre">trust_region_minimizer.cc</span></code></p></li>
+<li><p>Schur ordering was operating on the wrong object (Ricardo Martin)</p></li>
+<li><p>MSVC fixes (Petter Strandmark)</p></li>
+<li><p>Various fixes to <code class="docutils literal notranslate"><span class="pre">nist.cc</span></code> (Markus Moll)</p></li>
+<li><p>Fixed a jacobian scaling bug.</p></li>
+<li><p>Numerically robust computation of <code class="docutils literal notranslate"><span class="pre">model_cost_change</span></code>.</p></li>
+<li><p>Signed comparison compiler warning fixes (Ricardo Martin)</p></li>
+<li><p>Various compiler warning fixes all over.</p></li>
+<li><p>Inclusion guard fixes (Petter Strandmark)</p></li>
+<li><p>Segfault in test code (Sergey Popov)</p></li>
+<li><p>Replaced <code class="docutils literal notranslate"><span class="pre">EXPECT/ASSERT_DEATH</span></code> with the more portable
+<code class="docutils literal notranslate"><span class="pre">EXPECT_DEATH_IF_SUPPORTED</span></code> macros.</p></li>
+<li><p>Fixed the camera projection model in Ceres’ implementation of
+Snavely’s camera model. (Ricardo Martin)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id42">
+<h2>1.3.0<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id43">
+<h3>New Features<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Android Port (Scott Ettinger also contributed to the port)</p></li>
+<li><p>Windows port. (Changchang Wu and Pierre Moulon also contributed to the port)</p></li>
+<li><p>New subspace Dogleg Solver. (Markus Moll)</p></li>
+<li><p>Trust region algorithm now supports the option of non-monotonic steps.</p></li>
+<li><p>New loss functions <code class="docutils literal notranslate"><span class="pre">ArcTanLossFunction</span></code>, <code class="docutils literal notranslate"><span class="pre">TolerantLossFunction</span></code>
+and <code class="docutils literal notranslate"><span class="pre">ComposedLossFunction</span></code>. (James Roseborough).</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">DENSE_NORMAL_CHOLESKY</span></code> linear solver, which uses Eigen’s
+LDLT factorization on the normal equations.</p></li>
+<li><p>Cached symbolic factorization when using <code class="docutils literal notranslate"><span class="pre">CXSparse</span></code>.
+(Petter Strandark)</p></li>
+<li><p>New example <code class="docutils literal notranslate"><span class="pre">nist.cc</span></code> and data from the NIST non-linear
+regression test suite. (Thanks to Douglas Bates for suggesting this.)</p></li>
+<li><p>The traditional Dogleg solver now uses an elliptical trust
+region (Markus Moll)</p></li>
+<li><p>Support for returning initial and final gradients &amp; Jacobians.</p></li>
+<li><p>Gradient computation support in the evaluators, with an eye
+towards developing first order/gradient based solvers.</p></li>
+<li><p>A better way to compute <code class="docutils literal notranslate"><span class="pre">Solver::Summary::fixed_cost</span></code>. (Markus Moll)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMake</span></code> support for building documentation, separate examples,
+installing and uninstalling the library and Gerrit hooks (Arnaud
+Gelas)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SuiteSparse4</span></code> support (Markus Moll)</p></li>
+<li><p>Support for building Ceres without <code class="docutils literal notranslate"><span class="pre">TR1</span></code> (This leads to
+slightly slower <code class="docutils literal notranslate"><span class="pre">DENSE_SCHUR</span></code> and <code class="docutils literal notranslate"><span class="pre">SPARSE_SCHUR</span></code> solvers).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BALProblem</span></code> can now write a problem back to disk.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bundle_adjuster</span></code> now allows the user to normalize and perturb the
+problem before solving.</p></li>
+<li><p>Solver progress logging to file.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Program::ToString</span></code> and <code class="docutils literal notranslate"><span class="pre">ParameterBlock::ToString</span></code> to
+help with debugging.</p></li>
+<li><p>Ability to build Ceres as a shared library (MacOS and Linux only),
+associated versioning and build release script changes.</p></li>
+<li><p>Portable floating point classification API.</p></li>
+</ol>
+</div>
+<div class="section" id="id44">
+<h3>Bug Fixes<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix how invalid step evaluations are handled.</p></li>
+<li><p>Change the slop handling around zero for model cost changes to use
+relative tolerances rather than absolute tolerances.</p></li>
+<li><p>Fix an inadvertant integer to bool conversion. (Petter Strandmark)</p></li>
+<li><p>Do not link to <code class="docutils literal notranslate"><span class="pre">libgomp</span></code> when building on
+windows. (Petter Strandmark)</p></li>
+<li><p>Include <code class="docutils literal notranslate"><span class="pre">gflags.h</span></code> in <code class="docutils literal notranslate"><span class="pre">test_utils.cc</span></code>. (Petter
+Strandmark)</p></li>
+<li><p>Use standard random number generation routines. (Petter Strandmark)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TrustRegionMinimizer</span></code> does not implicitly negate the
+steps that it takes. (Markus Moll)</p></li>
+<li><p>Diagonal scaling allows for equal upper and lower bounds. (Markus Moll)</p></li>
+<li><p>TrustRegionStrategy does not misuse LinearSolver:Summary anymore.</p></li>
+<li><p>Fix Eigen3 Row/Column Major storage issue. (Lena Gieseke)</p></li>
+<li><p>QuaternionToAngleAxis now guarantees an angle in $[-pi, pi]$. (Guoxuan Zhang)</p></li>
+<li><p>Added a workaround for a compiler bug in the Android NDK to the
+Schur eliminator.</p></li>
+<li><p>The sparse linear algebra library is only logged in
+Summary::FullReport if it is used.</p></li>
+<li><p>Rename the macro <code class="docutils literal notranslate"><span class="pre">CERES_DONT_HAVE_PROTOCOL_BUFFERS</span></code>
+to <code class="docutils literal notranslate"><span class="pre">CERES_NO_PROTOCOL_BUFFERS</span></code> for consistency.</p></li>
+<li><p>Fix how static structure detection for the Schur eliminator logs
+its results.</p></li>
+<li><p>Correct example code in the documentation. (Petter Strandmark)</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">fpclassify.h</span></code> to work with the Android NDK and STLport.</p></li>
+<li><p>Fix a memory leak in the <code class="docutils literal notranslate"><span class="pre">levenber_marquardt_strategy_test.cc</span></code></p></li>
+<li><p>Fix an early return bug in the Dogleg solver. (Markus Moll)</p></li>
+<li><p>Zero initialize Jets.</p></li>
+<li><p>Moved <code class="docutils literal notranslate"><span class="pre">internal/ceres/mock_log.h</span></code> to <code class="docutils literal notranslate"><span class="pre">internal/ceres/gmock/mock-log.h</span></code></p></li>
+<li><p>Unified file path handling in tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_fitting.cc</span></code> includes <code class="docutils literal notranslate"><span class="pre">gflags</span></code></p></li>
+<li><p>Renamed Ceres’ Mutex class and associated macros to avoid
+namespace conflicts.</p></li>
+<li><p>Close the BAL problem file after reading it (Markus Moll)</p></li>
+<li><p>Fix IsInfinite on Jets.</p></li>
+<li><p>Drop alignment requirements for Jets.</p></li>
+<li><p>Fixed Jet to integer comparison. (Keith Leung)</p></li>
+<li><p>Fix use of uninitialized arrays. (Sebastian Koch &amp; Markus Moll)</p></li>
+<li><p>Conditionally compile gflag dependencies.(Casey Goodlett)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">data_fitting.cc</span></code> to the examples <code class="docutils literal notranslate"><span class="pre">CMake</span></code> file.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id45">
+<h2>1.2.3<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id46">
+<h3>Bug Fixes<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">suitesparse_test</span></code> is enabled even when <code class="docutils literal notranslate"><span class="pre">-DSUITESPARSE=OFF</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FixedArray</span></code> internal struct did not respect <code class="docutils literal notranslate"><span class="pre">Eigen</span></code>
+alignment requirements (Koichi Akabe &amp; Stephan Kassemeyer).</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">quadratic.cc</span></code> documentation and code mismatch
+(Nick Lewycky).</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id47">
+<h2>1.2.2<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id48">
+<h3>Bug Fixes<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix constant parameter blocks, and other minor fixes (Markus Moll)</p></li>
+<li><p>Fix alignment issues when combining <code class="docutils literal notranslate"><span class="pre">Jet</span></code> and
+<code class="docutils literal notranslate"><span class="pre">FixedArray</span></code> in automatic differeniation.</p></li>
+<li><p>Remove obsolete <code class="docutils literal notranslate"><span class="pre">build_defs</span></code> file.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id49">
+<h2>1.2.1<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id50">
+<h3>New Features<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Powell’s Dogleg solver</p></li>
+<li><p>Documentation now has a brief overview of Trust Region methods and
+how the Levenberg-Marquardt and Dogleg methods work.</p></li>
+</ol>
+</div>
+<div class="section" id="id51">
+<h3>Bug Fixes<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Destructor for <code class="docutils literal notranslate"><span class="pre">TrustRegionStrategy</span></code> was not virtual (Markus
+Moll)</p></li>
+<li><p>Invalid <code class="docutils literal notranslate"><span class="pre">DCHECK</span></code> in <code class="docutils literal notranslate"><span class="pre">suitesparse.cc</span></code> (Markus Moll)</p></li>
+<li><p>Iteration callbacks were not properly invoked (Luis Alberto
+Zarrabeiti)</p></li>
+<li><p>Logging level changes in ConjugateGradientsSolver</p></li>
+<li><p>VisibilityBasedPreconditioner setup does not account for skipped
+camera pairs. This was debugging code.</p></li>
+<li><p>Enable SSE support on MacOS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_test</span></code> was taking too long and too much memory (Koichi
+Akabe)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id52">
+<h2>1.2.0<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id53">
+<h3>New Features<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CXSparse</span></code> support.</p></li>
+<li><p>Block oriented fill reducing orderings. This reduces the
+factorization time for sparse <code class="docutils literal notranslate"><span class="pre">CHOLMOD</span></code> significantly.</p></li>
+<li><p>New Trust region loop with support for multiple trust region step
+strategies. Currently only Levenberg-Marquardt is supported, but
+this refactoring opens the door for Dog-leg, Stiehaug and others.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMake</span></code> file restructuring.  Builds in <code class="docutils literal notranslate"><span class="pre">Release</span></code> mode by   default, and now has platform specific tuning flags.</p></li>
+<li><p>Re-organized documentation. No new content, but better
+organization.</p></li>
+</ol>
+</div>
+<div class="section" id="id54">
+<h3>Bug Fixes<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fixed integer overflow bug in <code class="docutils literal notranslate"><span class="pre">block_random_access_sparse_matrix.cc</span></code>.</p></li>
+<li><p>Renamed some macros to prevent name conflicts.</p></li>
+<li><p>Fixed incorrect input to <code class="docutils literal notranslate"><span class="pre">StateUpdatingCallback</span></code>.</p></li>
+<li><p>Fixes to AutoDiff tests.</p></li>
+<li><p>Various internal cleanups.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id55">
+<h2>1.1.1<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id56">
+<h3>Bug Fixes<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fix a bug in the handling of constant blocks. (Louis Simard)</p></li>
+<li><p>Add an optional lower bound to the Levenberg-Marquardt regularizer
+to prevent oscillating between well and ill posed linear problems.</p></li>
+<li><p>Some internal refactoring and test fixes.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id57">
+<h2>1.1.0<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id58">
+<h3>New Features<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>New iterative linear solver for general sparse problems - <code class="docutils literal notranslate"><span class="pre">CGNR</span></code>
+and a block Jacobi preconditioner for it.</p></li>
+<li><p>Changed the semantics of how <code class="docutils literal notranslate"><span class="pre">SuiteSparse</span></code> dependencies are
+checked and used. Now <code class="docutils literal notranslate"><span class="pre">SuiteSparse</span></code> is built by default, only if
+all of its dependencies are present.</p></li>
+<li><p>Automatic differentiation now supports dynamic number of residuals.</p></li>
+<li><p>Support for writing the linear least squares problems to disk in
+text format so that they can loaded into <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>.</p></li>
+<li><p>Linear solver results are now checked for nan and infinities.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
+<li><p>A better more robust build system.</p></li>
+</ol>
+</div>
+<div class="section" id="id59">
+<h3>Bug Fixes<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Fixed a strict weak ordering bug in the schur ordering.</p></li>
+<li><p>Grammar and typos in the documents and code comments.</p></li>
+<li><p>Fixed tests which depended on exact equality between floating point
+values.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id60">
+<h2>1.0.0<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h2>
+<p>Initial open source release. Nathan Wiegand contributed to the Mac OSX
+port.</p>
+</div>
+<div class="section" id="origins">
+<h2>Origins<a class="headerlink" href="#origins" title="Permalink to this headline">¶</a></h2>
+<p>Ceres Solver grew out of the need for general least squares solving at
+Google. In early 2010, Sameer Agarwal and Fredrik Schaffalitzky
+started the development of Ceres Solver. Fredrik left Google shortly
+thereafter and Keir Mierle stepped in to take his place. After two
+years of on-and-off development, Ceres Solver was released as open
+source in May of 2012.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bibliography.html" class="btn btn-neutral float-right" title="Bibliography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Google Inc
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49769510-1', 'ceres-solver.org');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
